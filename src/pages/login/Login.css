@@ -1,0 +1,24 @@
+.Login {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Login-logo img {
+  height: 220px;
+}
+
+.Login-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--login-color);
+  width: 40rem;
+  height: 30rem;
+  padding: 2rem;
+}

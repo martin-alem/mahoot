@@ -1,10 +1,10 @@
-import './App.css';
-import GithubButton from "./../linkedin_button/LinkedInButton";
+import "./App.css";
+import Login from "./../../pages/login/Login";
 
 function App() {
   return (
     <div className="App">
-      <GithubButton/>
+      <Login />
     </div>
   );
 }
