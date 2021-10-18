@@ -1,9 +1,10 @@
 import './App.css';
+import GithubButton from "./../github_button/GithubButton";
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome To Mahoot</h1>
+      <GithubButton/>
     </div>
   );
 }
