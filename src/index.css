@@ -3,7 +3,8 @@
 :root {
   --color-white: #ffffff;
   --main-color: #172774;
-  --login-color: #EEEEEE;
+  --login-color: #eeeeee;
+  --color-black: #333333;
 }
 
 html {

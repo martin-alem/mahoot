@@ -7,17 +7,18 @@
   background-color: var(--color-white);
   outline: none;
   border: none;
-  border: 3px solid black;
+  border: 3px solid var(--color-black);
   border-radius: 4px;
   width: 35rem;
   cursor: pointer;
 }
 
 .GithubButton-button:hover {
-  background-color: whitesmoke;
+  background-color: var(--login-color);
 }
 
 .GithubButton-text {
+  color: var(--color-black);
   font-size: 2rem;
   text-transform: capitalize;
   font-weight: bold;
@@ -25,4 +26,21 @@
 
 .GithubButton-icon {
   font-size: 3.5rem;
+  color: var(--color-black);
+}
+
+@media screen and (max-width: 375px) {
+  .GithubButton-text {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+
+  .GithubButton-icon {
+    font-size: 2.5rem;
+  }
+
+  .GithubButton-button {
+    width: 28rem;
+  }
 }
