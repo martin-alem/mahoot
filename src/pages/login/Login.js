@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./../../images/logo.svg";
+import logo from "./../../images/logo.png";
 import "./Login.css";
 import GithubButton from "./../../components/github_button/GithubButton";
 import LinkedInButton from "./../../components/linkedin_button/LinkedInButton";

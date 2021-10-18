@@ -6,7 +6,7 @@ function Profile() {
   return (
     <div className="Profile">
       <div className="Profile-image">
-        <img src={defaultPicture} alt="default profile picture" />
+        <img src={defaultPicture} alt="default profile" />
       </div>
       <div className="Profile-drop-down">
         <ul>

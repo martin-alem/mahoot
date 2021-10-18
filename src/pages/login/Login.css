@@ -9,7 +9,8 @@
 }
 
 .Login-logo img {
-  height: 220px;
+  width: 220px;
+  margin-bottom: 2rem;
 }
 
 .Login-buttons {

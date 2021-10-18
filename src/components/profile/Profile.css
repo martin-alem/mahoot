@@ -1,0 +1,43 @@
+.Profile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.Profile-image img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 1px solid var(--main-color);
+}
+
+.Profile-drop-down {
+  position: absolute;
+  top: 5rem;
+  left: -10rem;
+  width: 15rem;
+  background-color: var(--login-color);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.Profile-drop-down ul {
+  padding: 0;
+}
+
+.Profile-drop-down ul li {
+  list-style-type: none;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.Profile-drop-down ul li:hover {
+  color: var(--color-white);
+  background-color: var(--color-gray);
+}
