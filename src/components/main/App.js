@@ -1,5 +1,5 @@
 import './App.css';
-import GithubButton from "./../github_button/GithubButton";
+import GithubButton from "./../linkedin_button/LinkedInButton";
 
 function App() {
   return (

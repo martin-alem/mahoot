@@ -1,0 +1,27 @@
+.LinkedInButton-button {
+  font-family: inherit;
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-white);
+  outline: none;
+  border: none;
+  border: 3px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.LinkedInButton-button:hover {
+  background-color: whitesmoke;
+}
+
+.LinkedInButton-text {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.LinkedInButton-icon {
+  font-size: 3.5rem;
+}
