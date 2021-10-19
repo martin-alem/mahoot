@@ -8,11 +8,6 @@
   align-items: center;
 }
 
-.Login-logo img {
-  width: 220px;
-  margin-bottom: 2rem;
-}
-
 .Login-buttons {
   display: flex;
   flex-direction: column;
