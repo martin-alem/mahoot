@@ -5,7 +5,7 @@ function SaveButton() {
   return (
     <div className="SaveButton">
       <button type="button" className="SaveButton-button">
-        <span class="material-icons">save</span>
+        <span className="material-icons">save</span>
         <span className="SaveButton-text">Save</span>
       </button>
     </div>
