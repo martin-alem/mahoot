@@ -8,7 +8,12 @@ function Home() {
     <div className="Home">
       <HomeNavigation />
       <div className="Home-mahoot">
-        <Quiz/>
+        <Quiz />
+        <Quiz />
+        <Quiz />
+        <Quiz />
+        <Quiz />
+        <Quiz />
       </div>
     </div>
   );
