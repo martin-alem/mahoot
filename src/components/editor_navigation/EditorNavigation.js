@@ -10,7 +10,9 @@ function EditorNavigation() {
   return (
     <div className="EditorNavigation">
       <div className="EditorNavigation-section-one">
-        <Logo type="nav" />
+        <div className="EditorNavigation-logo">
+          <Logo type="nav" />
+        </div>
         <TitleInput />
       </div>
       <div className="EditorNavigation-section-two">
