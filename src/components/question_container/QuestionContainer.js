@@ -6,10 +6,14 @@ import AddQuestionButton from "./../../components/add_question_button/AddQuestio
 function QuestionContainer() {
   return (
     <div className="QuestionContainer">
+      <AddQuestionButton />
       <div className="QuestionContainer-container">
         <QuizQuestion />
+        <QuizQuestion />
+        <QuizQuestion />
+        <QuizQuestion />
+        <QuizQuestion />
       </div>
-      <AddQuestionButton />
     </div>
   );
 }

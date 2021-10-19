@@ -1,0 +1,27 @@
+.QuestionContainer {
+  padding: 2rem;
+}
+
+.QuestionContainer-container {
+  height: 90rem;
+  overflow-y: auto;
+}
+/* width */
+.QuestionContainer-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+
+/* Track */
+.QuestionContainer-container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+
+/* Handle */
+.QuestionContainer-container::-webkit-scrollbar-thumb {
+  background: var(--color-black);
+  border-radius: 10px;
+}
+
