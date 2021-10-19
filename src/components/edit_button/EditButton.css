@@ -1,0 +1,24 @@
+.EditButton-button {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  outline: none;
+  border: none;
+  border: 1px solid var(--color-edit);
+  background-color: var(--color-edit);
+  color: var(--color-black);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0px 5px 2px var(--color-gray);
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.EditButton-button:hover {
+  transform: translateY(3px);
+  box-shadow: 0px 0px 2px var(--color-gray);
+}
+
+.EditButton-text {
+  font-weight: bold;
+}
