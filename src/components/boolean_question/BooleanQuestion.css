@@ -1,0 +1,91 @@
+.BooleanQuestion {
+  display: flex;
+  padding: 2rem;
+}
+
+.BooleanQuestion-question {
+  padding: 2rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.BooleanQuestion-delete {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: var(--color-exit);
+  cursor: pointer;
+}
+
+.BooleanQuestion-title {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.BooleanQuestion-number-type {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-black);
+}
+
+.BooleanQuestion-body {
+  padding: 2rem;
+  background-color: var(--login-color);
+  width: 100%;
+}
+
+.BooleanQuestion-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.BooleanQuestion-duration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: var(--color-black);
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: var(--color-gray);
+}
+
+.BooleanQuestion-question-media {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.BooleanQuestion-question-media p {
+  width: 200px;
+  font-size: 1.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-gray);
+}
+
+.BooleanQuestion-media {
+  width: 10rem;
+}
+
+.BooleanQuestion-answers {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+.BooleanQuestion-option {
+  width: 100%;
+  height: 15px;
+  background-color: var(--color-gray);
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import "./QuestionContainer.css";
 import QuizQuestion from "./../../components/quiz_question/QuizQuestion";
+import BooleanQuestion from "./../../components/boolean_question/BooleanQuestion";
 import AddQuestionButton from "./../../components/add_question_button/AddQuestionButton";
 
 function QuestionContainer() {
@@ -9,10 +10,7 @@ function QuestionContainer() {
       <AddQuestionButton />
       <div className="QuestionContainer-container">
         <QuizQuestion />
-        <QuizQuestion />
-        <QuizQuestion />
-        <QuizQuestion />
-        <QuizQuestion />
+        <BooleanQuestion />
       </div>
     </div>
   );
