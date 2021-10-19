@@ -1,22 +1,25 @@
-.PreviewButton-button{
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    padding: 0.5rem 1rem;
-    outline: none;
-    border: none;
-    background-color: var(--color-white);
-    border: 1px solid var(--color-black);
-    border-radius: 4px;
-    cursor: pointer;
-    color: var(--color-black);
-    transition: background-color .5s;
+.PreviewButton-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black);
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--color-black);
+  box-shadow: 0px 5px 2px var(--color-gray);
+  transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s;
 }
 
-.PreviewButton-button:hover{
-    background-color: var(--login-color);
+.PreviewButton-button:hover {
+  transform: translateY(3px);
+  background-color: var(--login-color);
+  box-shadow: 0px 0px 2px var(--color-gray);
 }
 
-.PreviewButton-text{
-    font-weight: bold;
+.PreviewButton-text {
+  font-weight: bold;
 }

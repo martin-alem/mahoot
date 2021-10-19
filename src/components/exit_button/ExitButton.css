@@ -1,0 +1,24 @@
+.ExitButton-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 2rem;
+  outline: none;
+  border: none;
+  background-color: var(--color-exit);
+  border: 1px solid var(--color-exit);
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--color-white);
+  box-shadow: 0px 5px 2px var(--color-gray);
+  transition: background-color 0.5s, transform 0.5s, box-shadow 0.5s;
+}
+
+.ExitButton-button:hover {
+  transform: translateY(3px);
+  box-shadow: 0px 0px 2px var(--color-gray);
+  /* background-color: rgba(255, 0, 117, 0.75); */
+}
+.ExitButton-text {
+  font-weight: bold;
+}
