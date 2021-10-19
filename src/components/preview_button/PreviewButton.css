@@ -1,0 +1,22 @@
+.PreviewButton-button{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: none;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--color-black);
+    transition: background-color .5s;
+}
+
+.PreviewButton-button:hover{
+    background-color: var(--login-color);
+}
+
+.PreviewButton-text{
+    font-weight: bold;
+}
