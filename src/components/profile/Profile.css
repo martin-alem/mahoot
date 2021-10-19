@@ -9,6 +9,7 @@
   height: 5rem;
   border-radius: 50%;
   border: 1px solid var(--main-color);
+  cursor: pointer;
 }
 
 .Profile-drop-down {
@@ -40,4 +41,42 @@
 .Profile-drop-down ul li:hover {
   color: var(--color-white);
   background-color: var(--color-gray);
+}
+
+.hideMenu {
+  display: none;
+  animation: hideMenu 0.5s linear;
+}
+
+.showMenu {
+  display: block;
+  animation: showMenu 0.5s linear;
+}
+
+@keyframes hideMenu {
+  from {
+    top: 5rem;
+    left: -10rem;
+    opacity: 1;
+  }
+
+  to {
+    top: 100%;
+    left: -10rem;
+    opacity: 0;
+  }
+}
+
+@keyframes showMenu {
+  from {
+    top: 100%;
+    left: -10rem;
+    opacity: 0;
+  }
+
+  to {
+    top: 5rem;
+    left: -10rem;
+    opacity: 1;
+  }
 }
