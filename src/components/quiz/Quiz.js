@@ -19,11 +19,11 @@ function Quiz() {
         <div className="Quiz-footer">
           <div className="Quiz-author">
             <img className="Quiz-image" src={defaultPicture} alt="default" />
-            <p>Martin Alemajoh</p>
+            <p className="Quiz-name">Martin Alemajoh</p>
           </div>
           <div className="Quiz-actions">
-            <p>Created 17 hours ago</p>
-            <p>1 play</p>
+            <p className="Quiz-time">Created 17 hours ago</p>
+            <p className="Quiz-play">1 play</p>
             <PlayButton />
             <EditButton />
           </div>

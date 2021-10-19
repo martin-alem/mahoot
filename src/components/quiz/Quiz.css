@@ -16,14 +16,10 @@
   height: 25rem;
   background-color: #ff0075;
   padding: 1rem;
-  position: relative;
 }
 
 .Quiz-questions {
   width: 100%;
-  position: absolute;
-  top: 78%;
-  left: 60%;
   background-color: rgba(242, 242, 242, 0.5);
   padding: 0 1rem;
   width: 11rem;
@@ -88,4 +84,36 @@
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
+}
+
+@media screen and (max-width: 790px) {
+  .Quiz-play,
+  .Quiz-time {
+    display: none !important;
+  }
+
+  .Quiz-actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 481px) {
+  .Quiz-questions {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .Quiz-name {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 306px) {
+  .Quiz-image {
+    display: none !important;
+  }
 }
