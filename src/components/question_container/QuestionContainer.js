@@ -11,6 +11,8 @@ function QuestionContainer() {
       <div className="QuestionContainer-container">
         <QuizQuestion />
         <BooleanQuestion />
+        <BooleanQuestion />
+        <QuizQuestion />
       </div>
     </div>
   );
