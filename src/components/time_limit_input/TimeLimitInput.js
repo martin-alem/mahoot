@@ -8,7 +8,7 @@ function TimeLimitInput() {
         <span className="material-icons">timer</span>
         <span className="TimeLimitInput-text">Time Limit</span>
       </div>
-      <select name="timeLimit">
+      <select className="TimeLimitInput-input" name="timeLimit">
         <option selected value="5">
           5 Seconds
         </option>
