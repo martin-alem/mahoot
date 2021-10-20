@@ -8,7 +8,7 @@ function PointInput() {
         <span className="material-icons">sports_score</span>
         <span className="PointInput-text">Points</span>
       </div>
-      <select name="point">
+      <select className="PointInput-input" name="point">
         <option selected value="standard">
           Standard
         </option>
