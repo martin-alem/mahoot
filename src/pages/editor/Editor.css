@@ -13,8 +13,10 @@
 }
 
 .Editor-edit {
-  background-color: green;
+  background-color: var(--login-color);
   width: 60%;
+  display: flex;
+  justify-content: center;
 }
 
 .Editor-question-params {
