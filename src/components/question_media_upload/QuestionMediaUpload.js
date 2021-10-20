@@ -5,12 +5,14 @@ function QuestionMediaUpload() {
   return (
     <div className="QuestionMediaUpload">
       <form encType="form/multipart">
-        <input type="file" accept="image/*" />
+        <input className="QuestionMediaUpload-input" type="file" accept="image/*" />
       </form>
+      <img />
       <button className="QuestionMediaUpload-upload">
-        <span class="material-icons-outlined">file_upload</span>
+        <span class="material-icons">
+          <span class="material-icons-outlined">add_a_photo</span>
+        </span>
       </button>
-      <p>Insert a media</p>
     </div>
   );
 }

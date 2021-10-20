@@ -4,6 +4,7 @@ import EditorNavigation from "./../../components/editor_navigation/EditorNavigat
 import QuestionContainer from "./../../components/question_container/QuestionContainer";
 import QuestionConfig from "../../components/question_config/QuestionConfig";
 import QuestionInput from "./../../components/question_input/QuestionInput";
+import QuestionMediaUpload from "../../components/question_media_upload/QuestionMediaUpload";
 
 function Editor() {
   return (
@@ -15,6 +16,7 @@ function Editor() {
         </div>
         <div className="Editor-edit">
           <QuestionInput />
+          <QuestionMediaUpload />
         </div>
         <div className="Editor-question-params">
           <QuestionConfig />
