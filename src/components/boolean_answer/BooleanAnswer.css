@@ -1,0 +1,40 @@
+.BooleanAnswer {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 5rem;
+}
+
+.BooleanAnswer-opt {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  background-color: var(--color-white);
+  padding: 1rem;
+}
+
+.BooleanAnswer-input {
+  width: 100%;
+  outline: none;
+  border: none;
+  border: 1px solid var(--color-white);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.BooleanAnswer-icon-square {
+  font-size: 10rem;
+  color: green;
+}
+
+.BooleanAnswer-icon-circle {
+  font-size: 10rem;
+  color: red;
+}
+
+.BooleanAnswer-radio {
+  font-size: 5rem;
+  cursor: pointer;
+}
