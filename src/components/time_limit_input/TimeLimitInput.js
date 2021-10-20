@@ -9,7 +9,7 @@ function TimeLimitInput() {
         <span className="TimeLimitInput-text">Time Limit</span>
       </div>
       <select className="TimeLimitInput-input" name="timeLimit">
-        <option selected value="5">
+        <option defaultValue value="5">
           5 Seconds
         </option>
         <option value="10">10 Seconds</option>

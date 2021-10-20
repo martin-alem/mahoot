@@ -5,7 +5,7 @@ function AddQuestionButton() {
   return (
     <div className="AddQuestion">
       <button type="button" className="AddQuestionButton-button">
-        <span class="material-icons">add</span>
+        <span className="material-icons">add</span>
         <span className="AddQuestionButton-text">Add question</span>
       </button>
     </div>

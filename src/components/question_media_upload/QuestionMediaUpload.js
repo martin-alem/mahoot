@@ -9,8 +9,8 @@ function QuestionMediaUpload() {
       </form>
       <img />
       <button className="QuestionMediaUpload-upload">
-        <span class="material-icons">
-          <span class="material-icons-outlined">add_a_photo</span>
+        <span className="material-icons">
+          <span className="material-icons-outlined">add_a_photo</span>
         </span>
       </button>
     </div>

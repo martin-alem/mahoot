@@ -6,6 +6,7 @@ import QuestionConfig from "../../components/question_config/QuestionConfig";
 import QuestionInput from "./../../components/question_input/QuestionInput";
 import QuestionMediaUpload from "../../components/question_media_upload/QuestionMediaUpload";
 import BooleanAnswer from "../../components/boolean_answer/BooleanAnswer";
+import QuizAnswer from "../../components/quiz_answer/QuizAnswer";
 
 function Editor() {
   return (
@@ -18,7 +19,8 @@ function Editor() {
         <div className="Editor-edit">
           <QuestionInput />
           <QuestionMediaUpload />
-          <BooleanAnswer/>
+          {/* <BooleanAnswer/> */}
+          <QuizAnswer/>
         </div>
         <div className="Editor-question-params">
           <QuestionConfig />

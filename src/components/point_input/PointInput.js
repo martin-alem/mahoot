@@ -9,7 +9,7 @@ function PointInput() {
         <span className="PointInput-text">Points</span>
       </div>
       <select className="PointInput-input" name="point">
-        <option selected value="standard">
+        <option defaultValue value="standard">
           Standard
         </option>
         <option value="double">Double</option>

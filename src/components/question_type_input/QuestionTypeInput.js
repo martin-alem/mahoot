@@ -9,7 +9,7 @@ function QuestionTypeInput() {
         <span className="QuestionTypeInput-text">Question Type</span>
       </div>
       <select className="QuestionTypeInput-input" name="questionType">
-        <option selected value="quiz">
+        <option defaultValue value="quiz">
           Quiz
         </option>
         <option value="boolean">True or False</option>
