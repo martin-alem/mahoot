@@ -9,29 +9,40 @@ import { UserContext } from "./../../contexts/userContext";
 function Login(props) {
   const userContext = React.useContext(UserContext);
   const params = extractSearchParams(props.location.search);
-  const [state] = React.useState(params);
+
+  const linkedInLogin = (url, method, data) => {
+    httpAgent(url, method, data)
+      .then((response) => {
+        if (response.ok) {
+          response
+            .json()
+            .then((data) => {
+              userContext.setUser(data);
+              console.log(data);
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const githubLogin = (url) => {};
+
   React.useEffect(() => {
-    if (Object.keys(params).length > 0 && params["code"]) {
-      httpAgent("http://localhost:5000/api/v1/linkedin/login", "GET", {})
-        .then((response) => {
-          if (response.ok) {
-            response
-              .json()
-              .then((data) => {
-                userContext.setUser(data);
-              })
-              .catch((error) => {
-                console.error(error);
-              });
-          }
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+    if (Object.keys(params).length > 0 && params["code"] && params["state"]) {
+      const url = "http://localhost:5000/api/v1/linkedin/auth";
+      const method = "POST";
+      const body = params;
+      linkedInLogin(url, method, body);
     } else {
-      console.log("No data");
+      console.log("No queryString");
     }
-  }, [state]);
+  }, []);
+
   return (
     <div className="Login">
       <div className="Login-logo">
