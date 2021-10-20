@@ -4,7 +4,9 @@ import GithubButton from "./../../components/github_button/GithubButton";
 import LinkedInButton from "./../../components/linkedin_button/LinkedInButton";
 import Logo from "../../components/logo/Logo";
 
-function Login() {
+function Login(props)
+{
+  const params = props.match.params;
   return (
     <div className="Login">
       <div className="Login-logo">
