@@ -14,10 +14,10 @@
 
 .Editor-edit {
   background-color: green;
-  width: 50%;
+  width: 60%;
 }
 
 .Editor-question-params {
-  background-color: yellow;
-  width: 25%;
+  background-color: var(--color-white);
+  width: 15%;
 }
