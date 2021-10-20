@@ -8,7 +8,7 @@ function QuestionTypeInput() {
         <span className="material-icons">help_outline</span>
         <span className="QuestionTypeInput-text">Question Type</span>
       </div>
-      <select name="questionType">
+      <select className="QuestionTypeInput-input" name="questionType">
         <option selected value="quiz">
           Quiz
         </option>
