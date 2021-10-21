@@ -11,15 +11,15 @@ function Login(props) {
   const userContext = React.useContext(UserContext);
   const userActionContext = React.useContext(UserActionContext);
   const params = extractSearchParams(props.location.search);
-  
+
   React.useEffect(() => {
     if (Object.keys(params).length > 0 && params["code"] && params["state"]) {
       const url = "http://localhost:5000/api/v1/linkedin/auth";
       const method = "POST";
       const body = params;
       userActionContext.linkedInLogin(url, method, body);
-    } else {
-      console.log("No queryString");
+    } else if (Object.keys(params).length > 0 && params["error"]) {
+      console.log(params["error_description"]);
     }
   }, []);
 
