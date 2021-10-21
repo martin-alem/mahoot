@@ -2,10 +2,16 @@ import React from "react";
 import useUserState from "./../hooks/useUserState";
 
 const UserContext = React.createContext();
+const UserActionContext = React.createContext();
 
 function UserProvider(props) {
-  const [user, setUser] = useUserState({});
-  return <UserContext.Provider value={{user, setUser}}>{props.children}</UserContext.Provider>;
+  const { userState, loggedIn, ...actions } = useUserState({});
+  return <UserContext.Provider value={{userState, loggedIn}}>
+    <UserActionContext.Provider value={{...actions}}>
+    {props.children}
+    </UserActionContext.Provider>
+
+  </UserContext.Provider>;
 }
 
-export { UserContext, UserProvider };
+export { UserActionContext, UserContext, UserProvider };

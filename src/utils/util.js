@@ -15,11 +15,11 @@ export const httpAgent = (url, method, data) => {
   const init = {
     method: method,
     headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
+      "Content-Type": "application/json",
+      Accept: "application/json",
     },
-    // mode: "same-origin",
-    // credentials: "same-origin",
+    mode: "cors",
+    credentials: "include",
     // cache: "default",
     // redirect: "follow",
     // referrer: "smack",

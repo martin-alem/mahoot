@@ -10,7 +10,7 @@ function LinkedInButton(props) {
 
   const login = () => {
     const url = `https://www.linkedin.com/oauth/v2/authorization?response_type=${responseType}&client_id=${clientId}&redirect_uri=${redirectURI}&state=${state}&scope=${scope}`;
-    window.location.assign("http://localhost:3000/?code=1234456&state=eiie8w7weh");
+    window.location.assign(url);
   };
   return (
     <div className="LinkedInButton">
