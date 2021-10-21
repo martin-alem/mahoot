@@ -1,0 +1,41 @@
+.DisplayMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  width: 400px;
+  border-radius: 4px;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+
+.DisplayMessage-icon {
+  color: var(--login-color);
+  align-self: flex-end;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.DisplayMessage-message {
+  font-size: 1.9rem;
+  color: var(--color-white);
+}
+
+.error {
+  background-color: #ff2442;
+}
+
+.info {
+  background-color: #3db2ff;
+}
+
+.warn {
+  background-color: #ffb830;
+}
+
+.hide {
+  display: none !important;
+}

@@ -3,6 +3,7 @@ import "./Login.css";
 import GithubButton from "./../../components/github_button/GithubButton";
 import LinkedInButton from "./../../components/linkedin_button/LinkedInButton";
 import Logo from "../../components/logo/Logo";
+import DisplayMessage from "./../../components/display_message/DisplayMessage";
 import { extractSearchParams } from "./../../utils/util";
 import { UserContext, UserActionContext } from "./../../contexts/userContext";
 import { Redirect } from "react-router-dom";
@@ -24,7 +25,7 @@ function Login(props) {
       const body = params;
       userActionContext.githubLogin(url, method, body);
     } else if (Object.keys(params).length > 0 && params["error"]) {
-      console.log(params["error_description"]);
+      userActionContext.setMessage({ visible: true, type: "warn", message: "You denied permission to access your data" });
     }
   }, []);
 
@@ -32,6 +33,7 @@ function Login(props) {
     <Redirect to="/home" />
   ) : (
     <div className="Login">
+      <DisplayMessage />
       <div className="Login-logo">
         <Logo type="default" />
       </div>
