@@ -26,7 +26,26 @@ function useUserState(initialValue) {
       });
   };
 
-  const githubLogin = (url) => {};
+  const githubLogin = (url, method, data) => {
+    httpAgent(url, method, data)
+      .then((response) => {
+        if (response.ok) {
+          response
+            .json()
+            .then((data) => {
+              if (data.statusCode === 200) {
+                setLoggedIn(true);
+              }
+            })
+            .catch((error) => {
+              console.error(error);
+            });
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   return { userState, loggedIn, linkedInLogin, githubLogin, setUserState };
 }
 

@@ -18,6 +18,11 @@ function Login(props) {
       const method = "POST";
       const body = params;
       userActionContext.linkedInLogin(url, method, body);
+    } else if (Object.keys(params).length > 0 && params["code"]) {
+      const url = "http://localhost:5000/api/v1/github/auth";
+      const method = "POST";
+      const body = params;
+      userActionContext.githubLogin(url, method, body);
     } else if (Object.keys(params).length > 0 && params["error"]) {
       console.log(params["error_description"]);
     }
