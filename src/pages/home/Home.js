@@ -8,27 +8,25 @@ import { httpAgent } from "./../../utils/util";
 function Home() {
   const userContext = React.useContext(UserContext);
   const userActionContext = React.useContext(UserActionContext);
-  React.useEffect(() => {
-    const url = "http://localhost:4000";
-    const method = "GET";
-    const data = {};
-    httpAgent(url, method, data)
-      .then((response) => {
-        if (response.ok) {
-          response
-            .json()
-            .then((data) => {
-              console.log(data);
-              userActionContext.setUserState(data.message);
-              userActionContext.setLoggedIn(true);
-            })
-            .catch((error) => console.error(error));
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+  // React.useEffect(() => {
+  //   const url = "http://localhost:4000";
+  //   const method = "GET";
+  //   const data = {};
+  //   httpAgent(url, method, data)
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         response
+  //           .json()
+  //           .then((data) => {
+  //             // userActionContext.setLoggedIn(true);
+  //           })
+  //           .catch((error) => console.error(error));
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }, []);
   return (
     <div className="Home">
       <HomeNavigation />

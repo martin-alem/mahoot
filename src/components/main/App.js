@@ -13,12 +13,12 @@ function App() {
     <div className="App">
       <UserProvider>
         <QuizProvider>
-        <Switch>
-          <Route path="/" exact component={Login} />
-          <ProtectedRoute path="/home" exact component={Home} />
-          <ProtectedRoute path="/editor" exact component={Editor} />
-          <ProtectedRoute path="/wait_room" exact component={WaitRoom} />
-        </Switch>
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <ProtectedRoute exact path="/home" component={Home} />
+            <ProtectedRoute exact path="/editor" component={Editor} />
+            <ProtectedRoute exact path="/wait_room" component={WaitRoom} />
+          </Switch>
         </QuizProvider>
       </UserProvider>
     </div>

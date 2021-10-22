@@ -1,9 +1,8 @@
 import React from "react";
-import { httpAgent } from "./../utils/util";
+import { httpAgent, setLoggedIn } from "./../utils/util";
 
 function useUserState(initialValue) {
   const [userState, setUserState] = React.useState(initialValue);
-  const [loggedIn, setLoggedIn] = React.useState(false);
   const [message, setMessage] = React.useState({ visible: false, type: "default", message: "" });
 
   const linkedInLogin = (url, method, data) => {
@@ -14,7 +13,8 @@ function useUserState(initialValue) {
             .json()
             .then((data) => {
               if (data.statusCode === 200) {
-                setLoggedIn(true);
+                setLoggedIn({ key: "loggedIn", value: true });
+                window.location.replace("/home");
               } else {
                 setMessage({ visible: true, type: "error", message: data.message });
               }
@@ -44,7 +44,8 @@ function useUserState(initialValue) {
                 if (data.status === "partial") {
                   setMessage({ visible: true, type: "error", message: data.message });
                 } else {
-                  setLoggedIn(true);
+                  setLoggedIn({ key: "loggedIn", value: true });
+                  window.location.replace("/home");
                 }
               } else {
                 setMessage({ visible: true, type: "error", message: data.message });
@@ -63,7 +64,7 @@ function useUserState(initialValue) {
         console.error(error);
       });
   };
-  return { userState, loggedIn, message, setMessage, linkedInLogin, githubLogin, setUserState, setLoggedIn };
+  return { userState, message, setMessage, linkedInLogin, githubLogin, setUserState, setLoggedIn };
 }
 
 export default useUserState;

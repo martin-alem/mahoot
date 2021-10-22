@@ -32,3 +32,11 @@ export const httpAgent = (url, method, data) => {
 
   return fetch(url, init);
 };
+
+export const setLoggedIn = (data) => {
+  window.localStorage.setItem([data.key], JSON.stringify(data.value));
+};
+
+export const getLoggedIn = () => {
+  return JSON.parse(window.localStorage.getItem("loggedIn"));
+};

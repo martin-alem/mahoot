@@ -4,12 +4,10 @@ import GithubButton from "./../../components/github_button/GithubButton";
 import LinkedInButton from "./../../components/linkedin_button/LinkedInButton";
 import Logo from "../../components/logo/Logo";
 import DisplayMessage from "./../../components/display_message/DisplayMessage";
-import { extractSearchParams } from "./../../utils/util";
-import { UserContext, UserActionContext } from "./../../contexts/userContext";
-import { Redirect } from "react-router-dom";
+import { extractSearchParams} from "./../../utils/util";
+import { UserActionContext } from "./../../contexts/userContext";
 
 function Login(props) {
-  const userContext = React.useContext(UserContext);
   const userActionContext = React.useContext(UserActionContext);
   const params = extractSearchParams(props.location.search);
 
@@ -28,10 +26,7 @@ function Login(props) {
       userActionContext.setMessage({ visible: true, type: "warn", message: "You denied permission to access your data" });
     }
   }, []);
-
-  return userContext.loggedIn ? (
-    <Redirect to="/home" />
-  ) : (
+  return  (
     <div className="Login">
       <DisplayMessage />
       <div className="Login-logo">
