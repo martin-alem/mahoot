@@ -63,7 +63,7 @@ function useUserState(initialValue) {
         console.error(error);
       });
   };
-  return { userState, loggedIn, message, setMessage, linkedInLogin, githubLogin, setUserState };
+  return { userState, loggedIn, message, setMessage, linkedInLogin, githubLogin, setUserState, setLoggedIn };
 }
 
 export default useUserState;

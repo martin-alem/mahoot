@@ -2,20 +2,37 @@ import React from "react";
 import "./Home.css";
 import HomeNavigation from "./../../components/home_navigation/HomeNavigation";
 import Quiz from "./../../components/quiz/Quiz";
-import { UserContext } from "../../contexts/userContext";
+import { UserContext, UserActionContext } from "../../contexts/userContext";
+import { httpAgent } from "./../../utils/util";
 
 function Home() {
   const userContext = React.useContext(UserContext);
-  React.useEffect(() =>
-  {
-    // get the access token from cookie and make a request to main server
-    console.log("Fetch user data using id from context");
+  const userActionContext = React.useContext(UserActionContext);
+  React.useEffect(() => {
+    const url = "http://localhost:4000";
+    const method = "GET";
+    const data = {};
+    httpAgent(url, method, data)
+      .then((response) => {
+        if (response.ok) {
+          response
+            .json()
+            .then((data) => {
+              console.log(data);
+              userActionContext.setUserState(data.message);
+              userActionContext.setLoggedIn(true);
+            })
+            .catch((error) => console.error(error));
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
   return (
     <div className="Home">
       <HomeNavigation />
-      <div className="Home-mahoot">
-      </div>
+      <div className="Home-mahoot"></div>
     </div>
   );
 }
