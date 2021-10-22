@@ -12,7 +12,7 @@ function QuestionContainer() {
     <div className="QuestionContainer">
       <AddQuestionButton />
       <div className="QuestionContainer-container">
-        {quizQuestion.map((question, index) => {
+        {quizQuestion.questions.map((question, index) => {
           if (question.type === "quiz") {
             return <QuizQuestion key={uuid()} id={index} />;
           } else if (question.type === "boolean") {

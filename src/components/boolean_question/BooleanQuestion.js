@@ -6,10 +6,13 @@ import { QuizActionContext } from "./../../contexts/quizContext";
 function BooleanQuestion(props) {
   const quizActionContext = React.useContext(QuizActionContext);
   const deleteQuestion = () => {
-    quizActionContext.removeQuestion(props.id - 1);
+    quizActionContext.removeQuestion(props.id);
+  };
+  const editQuestion = () => {
+    quizActionContext.editQuestion(props.id);
   };
   return (
-    <div className="BooleanQuestion">
+    <div onclick={editQuestion} className="BooleanQuestion">
       <div className="BooleanQuestion-delete">
         <span onClick={deleteQuestion} className="material-icons">
           delete
