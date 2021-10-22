@@ -25,7 +25,7 @@ function BooleanQuestion(props) {
       <div className="BooleanQuestion-question">
         <div className="BooleanQuestion-title">
           <h3 className="BooleanQuestion-number-type">
-            {props.id + 1}. {props.question.type}
+            {props.id + 1}. True or False
           </h3>
         </div>
         <div className="BooleanQuestion-body">

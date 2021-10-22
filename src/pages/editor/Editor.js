@@ -7,7 +7,7 @@ import QuestionInput from "./../../components/question_input/QuestionInput";
 import QuestionMediaUpload from "../../components/question_media_upload/QuestionMediaUpload";
 import BooleanAnswer from "../../components/boolean_answer/BooleanAnswer";
 import QuizAnswer from "../../components/quiz_answer/QuizAnswer";
-import { QuizActionContext, QuizContext } from "./../../contexts/quizContext";
+import {QuizContext } from "./../../contexts/quizContext";
 
 function Editor() {
   const quizContext = React.useContext(QuizContext);
@@ -21,7 +21,7 @@ function Editor() {
         <div className="Editor-edit">
           <QuestionInput />
           <QuestionMediaUpload />
-          {quizContext.currentQuestion.type === "quiz" ? <QuizAnswer /> : <BooleanAnswer />}
+          {quizContext.currentQuestion.type === "quiz" ? <QuizAnswer /> : quizContext.currentQuestion.type === "boolean" ? <BooleanAnswer /> : <QuizAnswer />}
         </div>
         <div className="Editor-question-params">
           <QuestionConfig />

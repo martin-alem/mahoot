@@ -24,7 +24,7 @@ function QuizQuestion(props) {
       </div>
       <div className="QuizQuestion-question">
         <div className="QuizQuestion-title">
-          <h3 className="QuizQuestion-number-type">{props.id + 1}. { props.question.type}</h3>
+          <h3 className="QuizQuestion-number-type">{props.id + 1}. Quiz</h3>
         </div>
         <div className="QuizQuestion-body">
           <div className="QuizQuestion-info">
