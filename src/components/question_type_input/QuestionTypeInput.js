@@ -1,17 +1,23 @@
 import React from "react";
 import "./QuestionTypeInput.css";
-import { QuizContext } from "./../../contexts/quizContext";
+import { QuizContext, QuizActionContext } from "./../../contexts/quizContext";
 
 function QuestionTypeInput() {
   const quizContext = React.useContext(QuizContext);
+  const quizActionContext = React.useContext(QuizActionContext);
   const { edit } = quizContext.isEditable;
+  const [questionType, setQuestionType] = React.useState("quiz");
+  const handleSelectChange = (e) => {
+    setQuestionType(e.target.value);
+    quizActionContext.performEdit({ type: "type", value: e.target.value });
+  };
   return (
     <div className="QuestionTypeInput">
       <div className="QuestionTypeInput-label">
         <span className="material-icons">help_outline</span>
         <span className="QuestionTypeInput-text">Question Type</span>
       </div>
-      <select disabled={!edit} className="QuestionTypeInput-input" name="questionType">
+      <select onChange={handleSelectChange} disabled={!edit} className="QuestionTypeInput-input" name="questionType">
         <option defaultValue value="quiz">
           Quiz
         </option>

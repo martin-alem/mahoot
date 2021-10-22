@@ -1,11 +1,10 @@
 import React from "react";
 import defaultImage from "./../../images/default_img.png";
 import "./QuizQuestion.css";
-import { QuizActionContext, QuizContext } from "./../../contexts/quizContext";
+import { QuizActionContext} from "./../../contexts/quizContext";
 
 function QuizQuestion(props) {
   const quizActionContext = React.useContext(QuizActionContext);
-  const quizContext = React.useContext(QuizContext)
   const deleteQuestion = (e) => {
     if (e.target.dataset.action === "delete") {
       quizActionContext.removeQuestion(props.id);

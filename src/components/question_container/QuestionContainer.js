@@ -14,9 +14,9 @@ function QuestionContainer() {
       <div className="QuestionContainer-container">
         {quizQuestion.questions.map((question, index) => {
           if (question.type === "quiz") {
-            return <QuizQuestion key={uuid()} id={index} question={question}/>;
+            return <QuizQuestion key={uuid()} id={index} question={question} />;
           } else if (question.type === "boolean") {
-            return <BooleanQuestion key={uuid()} id={index} />;
+            return <BooleanQuestion key={uuid()} id={index} question={question} />;
           }
         })}
       </div>

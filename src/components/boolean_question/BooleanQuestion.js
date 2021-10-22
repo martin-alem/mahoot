@@ -5,28 +5,34 @@ import { QuizActionContext } from "./../../contexts/quizContext";
 
 function BooleanQuestion(props) {
   const quizActionContext = React.useContext(QuizActionContext);
-  const deleteQuestion = () => {
-    quizActionContext.removeQuestion(props.id);
+  const deleteQuestion = (e) => {
+    if (e.target.dataset.action === "delete") {
+      quizActionContext.removeQuestion(props.id);
+    }
   };
-  const editQuestion = () => {
-    quizActionContext.editQuestion(props.id);
+  const editQuestion = (e) => {
+    if (e.target.dataset.action === undefined) {
+      quizActionContext.editQuestion(props.id);
+    }
   };
   return (
-    <div onclick={editQuestion} className="BooleanQuestion">
+    <div onClick={editQuestion} className="BooleanQuestion">
       <div className="BooleanQuestion-delete">
-        <span onClick={deleteQuestion} className="material-icons">
+        <span onClick={deleteQuestion} data-action="delete" className="material-icons">
           delete
         </span>
       </div>
       <div className="BooleanQuestion-question">
         <div className="BooleanQuestion-title">
-          <h3 className="BooleanQuestion-number-type">{props.id + 1}. True or False</h3>
+          <h3 className="BooleanQuestion-number-type">
+            {props.id + 1}. {props.question.type}
+          </h3>
         </div>
         <div className="BooleanQuestion-body">
           <div className="BooleanQuestion-info">
-            <div className="BooleanQuestion-duration">240</div>
+            <div className="BooleanQuestion-duration">{props.question.duration}</div>
             <div className="BooleanQuestion-question-media">
-              <p>What is JavaScript the best quiz ever in the world</p>
+              <p>{props.question.title}</p>
               <img className="BooleanQuestion-media" src={defaultImage} alt="media" />
             </div>
           </div>
