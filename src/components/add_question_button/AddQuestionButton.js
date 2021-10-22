@@ -1,10 +1,16 @@
 import React from "react";
 import "./AddQuestionButton.css";
+import { QuizActionContext } from "../../contexts/quizContext";
 
 function AddQuestionButton() {
+  const questionActionContext = React.useContext(QuizActionContext);
+
+  const addQuestion = () => {
+    questionActionContext.addQuestion();
+  };
   return (
     <div className="AddQuestion">
-      <button type="button" className="AddQuestionButton-button">
+      <button onClick={addQuestion} type="button" className="AddQuestionButton-button">
         <span className="material-icons">add</span>
         <span className="AddQuestionButton-text">Add question</span>
       </button>

@@ -1,16 +1,23 @@
 import React from "react";
 import defaultImage from "./../../images/default_img.png";
 import "./BooleanQuestion.css";
+import { QuizActionContext } from "./../../contexts/quizContext";
 
-function BooleanQuestion() {
+function BooleanQuestion(props) {
+  const quizActionContext = React.useContext(QuizActionContext);
+  const deleteQuestion = () => {
+    quizActionContext.removeQuestion(props.id - 1);
+  };
   return (
     <div className="BooleanQuestion">
       <div className="BooleanQuestion-delete">
-        <span className="material-icons">delete</span>
+        <span onClick={deleteQuestion} className="material-icons">
+          delete
+        </span>
       </div>
       <div className="BooleanQuestion-question">
         <div className="BooleanQuestion-title">
-          <h3 className="BooleanQuestion-number-type">1. True or False</h3>
+          <h3 className="BooleanQuestion-number-type">{props.id + 1}. True or False</h3>
         </div>
         <div className="BooleanQuestion-body">
           <div className="BooleanQuestion-info">

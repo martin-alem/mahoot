@@ -1,16 +1,23 @@
 import React from "react";
 import defaultImage from "./../../images/default_img.png";
 import "./QuizQuestion.css";
+import { QuizActionContext } from "./../../contexts/quizContext";
 
-function QuizQuestion() {
+function QuizQuestion(props) {
+  const quizActionContext = React.useContext(QuizActionContext);
+  const deleteQuestion = () => {
+    quizActionContext.removeQuestion(props.id > 1 ? props.id - 1 : props.id);
+  };
   return (
     <div className="QuizQuestion">
       <div className="QuizQuestion-delete">
-        <span className="material-icons">delete</span>
+        <span onClick={deleteQuestion} className="material-icons">
+          delete
+        </span>
       </div>
       <div className="QuizQuestion-question">
         <div className="QuizQuestion-title">
-          <h3 className="QuizQuestion-number-type">1. Quiz</h3>
+          <h3 className="QuizQuestion-number-type">{props.id + 1}. Quiz</h3>
         </div>
         <div className="QuizQuestion-body">
           <div className="QuizQuestion-info">
@@ -40,4 +47,4 @@ function QuizQuestion() {
   );
 }
 
-export default QuizQuestion;
+export default React.memo(QuizQuestion);
