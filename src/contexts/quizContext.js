@@ -13,7 +13,7 @@ function QuizProvider(props) {
     duration: 5,
     point: "standard",
   };
-  const [quiz, setQuiz] = React.useState({id: "", title: ""});
+  const [quiz, setQuiz] = React.useState({ id: "", title: "" });
   const [questions, setQuestion] = React.useState([]);
   const [isEditable, setIsEditable] = React.useState({ edit: false, question: null });
   const [currentQuestion, setCurrentQuestion] = React.useState(defaultQuestion);
@@ -49,9 +49,16 @@ function QuizProvider(props) {
       setQuestion(newQuestions);
     }
   };
+
+  const resetState = () => {
+    setQuestion([]);
+    setQuiz({ id: "", title: "" });
+    setIsEditable({ edit: false, question: null });
+    setCurrentQuestion(defaultQuestion);
+  };
   return (
     <QuizContext.Provider value={{ questions, isEditable, currentQuestion, quiz }}>
-      <QuizActionContext.Provider value={{ addQuestion, removeQuestion, editQuestion, performEdit, setQuiz }}>{props.children}</QuizActionContext.Provider>
+      <QuizActionContext.Provider value={{ addQuestion, removeQuestion, editQuestion, performEdit, setQuiz, resetState }}>{props.children}</QuizActionContext.Provider>
     </QuizContext.Provider>
   );
 }

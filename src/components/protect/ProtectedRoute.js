@@ -16,7 +16,6 @@ function ProtectedRoute({ component: Component, ...rest }) {
             .json()
             .then((data) => {
               userActionContext.setUserState(data.message);
-              console.log(data);
             })
             .catch((error) => console.error(error));
         } else {

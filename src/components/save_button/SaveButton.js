@@ -3,12 +3,14 @@ import "./SaveButton.css";
 import { httpAgent } from "./../../utils/util";
 import { QuizContext, QuizActionContext } from "./../../contexts/quizContext";
 import { UserActionContext } from "./../../contexts/userContext";
+import { Redirect } from "react-router-dom";
 
 function SaveButton() {
   const quizContext = React.useContext(QuizContext);
   const quizActionContext = React.useContext(QuizActionContext);
   const userActionContext = React.useContext(UserActionContext);
   const [isSaving, setIsSaving] = React.useState(false);
+  const [doneSaving, setDoneSaving] = React.useState(false);
   const saveQuestions = () => {
     const { questions, quiz } = quizContext;
 
@@ -20,7 +22,7 @@ function SaveButton() {
       } else if (!questions.every(questionTest)) {
         userActionContext.setMessage({ visible: true, type: "error", message: "Please check your questions to make sure it has a title and answers" });
       } else {
-        //reset all state and submit to database
+        quizActionContext.resetState();
         setIsSaving(true);
         submitQuiz({ questions, quiz });
       }
@@ -34,19 +36,23 @@ function SaveButton() {
       const response = await httpAgent(url, method, quiz);
       if (response.ok) {
         const results = await response.json();
+        setIsSaving(false);
         console.log(results);
+        setDoneSaving(true);
       }
     } catch (error) {
+      setIsSaving(false);
       userActionContext.setMessage({ visible: true, type: "error", message: "Unable to save your save." });
       console.log(error);
     }
-    setIsSaving(false);
   };
 
   const questionTest = (question) => {
     return question["title"] !== "" && question["answers"].length > 0;
   };
-  return (
+  return doneSaving ? (
+    <Redirect to="/home" />
+  ) : (
     <div className="SaveButton">
       <button onClick={saveQuestions} type="button" className="SaveButton-button" disabled={isSaving}>
         <span className="material-icons">{isSaving ? "hourglass_bottom" : "save"}</span>
