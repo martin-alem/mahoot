@@ -4,17 +4,17 @@ import defaultPicture from "./../../images/default.jpg";
 import EditButton from "./../../components/edit_button/EditButton";
 import PlayButton from "./../../components/play_button/PlayButton";
 
-function Quiz() {
+function Quiz(props) {
   return (
     <div className="Quiz">
       <div className="Quiz-color">
         <div className="Quiz-questions">
-          <p>4 questions</p>
+          <p>{props.quiz.numberOfQuestion} {props.quiz.numberOfQuestion > 1 ? "questions" : "question"}</p>
         </div>
       </div>
       <div className="Quiz-info">
         <div className="Quiz-title">
-          <h1>JavaScript Quiz</h1>
+          <h1>{props.quiz.title}</h1>
         </div>
         <div className="Quiz-footer">
           <div className="Quiz-author">

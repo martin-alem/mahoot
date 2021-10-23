@@ -21,7 +21,8 @@ function Home() {
         if (response.ok) {
           const results = await response.json();
           setIsFetching(false);
-          console.log(results);
+          console.log(results)
+          setQuizzes(results["quizzes"]);
         }
       } catch (error) {
          setIsFetching(false);
@@ -36,7 +37,7 @@ function Home() {
     <div className="Home">
       <DisplayMessage />
       <HomeNavigation />
-      <div className="Home-mahoot">{isFetching ? <p>Fetching quizzes...</p> : ""}</div>
+      <div className="Home-mahoot">{isFetching ? <p>Fetching quizzes...</p> : quizzes.map(quiz => <Quiz quiz={quiz} key={quiz._id}/>)}</div>
     </div>
   );
 }
