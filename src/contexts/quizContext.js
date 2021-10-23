@@ -50,6 +50,13 @@ function QuizProvider(props) {
     }
   };
 
+  const duplicateQuestion = () => {
+    const currentQ = { ...currentQuestion };
+    setQuestion((prevState) => {
+      return [...prevState, currentQ];
+    });
+  };
+
   const resetState = () => {
     setQuestion([]);
     setQuiz({ id: "", title: "" });
@@ -58,7 +65,19 @@ function QuizProvider(props) {
   };
   return (
     <QuizContext.Provider value={{ questions, isEditable, currentQuestion, quiz }}>
-      <QuizActionContext.Provider value={{ addQuestion, removeQuestion, editQuestion, performEdit, setQuiz, resetState }}>{props.children}</QuizActionContext.Provider>
+      <QuizActionContext.Provider
+        value={{
+          addQuestion,
+          removeQuestion,
+          editQuestion,
+          performEdit,
+          setQuiz,
+          resetState,
+          duplicateQuestion,
+        }}
+      >
+        {props.children}
+      </QuizActionContext.Provider>
     </QuizContext.Provider>
   );
 }

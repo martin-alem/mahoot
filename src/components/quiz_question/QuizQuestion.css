@@ -90,3 +90,7 @@
   height: 15px;
   background-color: var(--color-gray);
 }
+
+.QuizQuestion-active {
+  background-color: var(--color-active);
+}

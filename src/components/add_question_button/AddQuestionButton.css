@@ -12,6 +12,7 @@
   color: var(--color-white);
   box-shadow: 0px 5px 2px var(--color-gray);
   transition: background-color 0.5s, transform 0.5s, box-shadow 0.5s;
+  margin-bottom: 1rem;
 }
 
 .AddQuestionButton-button:hover {

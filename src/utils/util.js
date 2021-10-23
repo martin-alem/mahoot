@@ -45,3 +45,17 @@ export const setLoggedIn = (data) => {
 export const getLoggedIn = () => {
   return JSON.parse(window.localStorage.getItem("loggedIn"));
 };
+
+export const convertTime = (date) => {
+  const current = new Date();
+  const dTime = new Date(date);
+  if (current.getHours() - dTime.getHours() > 1) {
+    return `Created ${current.getHours() - dTime.getHours()} hours ago`;
+  } else if (current.getMinutes() - dTime.getMinutes() > 1) {
+    return `Created ${current.getMinutes() - dTime.getMinutes()} minutes ago`;
+  } else if (current.getSeconds() - dTime.getSeconds() > 1) {
+    return `Created ${current.getSeconds() - dTime.getSeconds()} seconds ago`;
+  } else {
+    return `Created ${0} seconds ago`;
+  }
+};

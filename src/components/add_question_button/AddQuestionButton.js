@@ -3,10 +3,10 @@ import "./AddQuestionButton.css";
 import { QuizActionContext } from "../../contexts/quizContext";
 
 function AddQuestionButton() {
-  const questionActionContext = React.useContext(QuizActionContext);
+  const quizActionContext = React.useContext(QuizActionContext);
 
   const addQuestion = () => {
-    questionActionContext.addQuestion();
+    quizActionContext.addQuestion();
   };
   return (
     <div className="AddQuestion">

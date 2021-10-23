@@ -1,10 +1,14 @@
 import React from "react";
 import "./Quiz.css";
+import { convertTime } from "./../../utils/util";
 import defaultPicture from "./../../images/default.jpg";
 import EditButton from "./../../components/edit_button/EditButton";
 import PlayButton from "./../../components/play_button/PlayButton";
+import { UserContext } from "./../../contexts/userContext";
 
-function Quiz(props) {
+function Quiz(props)
+{
+  const userContext = React.useContext(UserContext);
   return (
     <div className="Quiz">
       <div className="Quiz-color">
@@ -18,11 +22,11 @@ function Quiz(props) {
         </div>
         <div className="Quiz-footer">
           <div className="Quiz-author">
-            <img className="Quiz-image" src={defaultPicture} alt="default" />
-            <p className="Quiz-name">Martin Alemajoh</p>
+            <img className="Quiz-image" src={userContext.userState.image || defaultPicture} alt="default" />
+            <p className="Quiz-name">{userContext.userState.firstName} { userContext.userState.lastName}</p>
           </div>
           <div className="Quiz-actions">
-            <p className="Quiz-time">Created 17 hours ago</p>
+            <p className="Quiz-time">{convertTime(props.quiz.date)}</p>
             <p className="Quiz-play">1 play</p>
             <PlayButton />
             <EditButton />

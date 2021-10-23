@@ -1,10 +1,11 @@
 import React from "react";
 import defaultImage from "./../../images/default_img.png";
 import "./QuizQuestion.css";
-import { QuizActionContext} from "./../../contexts/quizContext";
+import { QuizActionContext, QuizContext } from "./../../contexts/quizContext";
 
 function QuizQuestion(props) {
   const quizActionContext = React.useContext(QuizActionContext);
+  const quizContext = React.useContext(QuizContext);
   const deleteQuestion = (e) => {
     if (e.target.dataset.action === "delete") {
       quizActionContext.removeQuestion(props.id);
@@ -16,7 +17,7 @@ function QuizQuestion(props) {
     }
   };
   return (
-    <div onClick={editQuestion} className="QuizQuestion">
+    <div onClick={editQuestion} className={quizContext.isEditable.edit && quizContext.isEditable.question === props.id ? "QuizQuestion QuizQuestion-active" : "QuizQuestion"}>
       <div className="QuizQuestion-delete">
         <span onClick={deleteQuestion} data-action="delete" className="material-icons">
           delete
