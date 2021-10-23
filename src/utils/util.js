@@ -11,7 +11,7 @@ export const extractSearchParams = (search) => {
   return queryString;
 };
 
-export const httpAgent = (url, method, data) => {
+export const httpAgent = async (url, method, data) => {
   const init = {
     method: method,
     headers: {
@@ -30,7 +30,12 @@ export const httpAgent = (url, method, data) => {
     init["body"] = JSON.stringify(data);
   }
 
-  return fetch(url, init);
+  const response = await fetch(url, init);
+  if (response.status === 401) {
+    window.location.replace("/");
+  } else {
+    return response;
+  }
 };
 
 export const setLoggedIn = (data) => {
