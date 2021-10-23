@@ -5,6 +5,7 @@ const QuizActionContext = React.createContext();
 
 function QuizProvider(props) {
   const defaultQuestion = {
+    id: "",
     title: "",
     media: "",
     answers: [],
@@ -12,7 +13,7 @@ function QuizProvider(props) {
     duration: 5,
     point: "standard",
   };
-  const [quiz, setQuiz] = React.useState({});
+  const [quiz, setQuiz] = React.useState({id: "", title: ""});
   const [questions, setQuestion] = React.useState([]);
   const [isEditable, setIsEditable] = React.useState({ edit: false, question: null });
   const [currentQuestion, setCurrentQuestion] = React.useState(defaultQuestion);
