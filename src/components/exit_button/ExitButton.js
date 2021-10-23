@@ -1,12 +1,15 @@
 import React from "react";
 import "./ExitButton.css";
 import { Link } from "react-router-dom";
+import { QuizActionContext } from "./../../contexts/quizContext";
 
-function ExitButton() {
+function ExitButton()
+{
+  const quizActionContext = React.useContext(QuizActionContext);
   return (
     <div className="ExitButton">
       <Link to="/home">
-        <button className="ExitButton-button" type="button">
+        <button onClick={quizActionContext.resetState} className="ExitButton-button" type="button">
           <span className="material-icons">close</span>
           <span className="ExitButton-text">Exit</span>
         </button>
