@@ -49,8 +49,8 @@ function QuizProvider(props) {
     }
   };
   return (
-    <QuizContext.Provider value={{ questions, isEditable, currentQuestion }}>
-      <QuizActionContext.Provider value={{ addQuestion, removeQuestion, editQuestion, performEdit }}>{props.children}</QuizActionContext.Provider>
+    <QuizContext.Provider value={{ questions, isEditable, currentQuestion, quiz }}>
+      <QuizActionContext.Provider value={{ addQuestion, removeQuestion, editQuestion, performEdit, setQuiz }}>{props.children}</QuizActionContext.Provider>
     </QuizContext.Provider>
   );
 }
