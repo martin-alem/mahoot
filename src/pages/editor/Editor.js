@@ -7,12 +7,15 @@ import QuestionInput from "./../../components/question_input/QuestionInput";
 import QuestionMediaUpload from "../../components/question_media_upload/QuestionMediaUpload";
 import BooleanAnswer from "../../components/boolean_answer/BooleanAnswer";
 import QuizAnswer from "../../components/quiz_answer/QuizAnswer";
-import {QuizContext } from "./../../contexts/quizContext";
+import DisplayMessage from "../../components/display_message/DisplayMessage";
+import { QuizContext } from "./../../contexts/quizContext";
 
-function Editor() {
+
+function Editor(){
   const quizContext = React.useContext(QuizContext);
   return (
     <div className="Editor">
+      <DisplayMessage />
       <EditorNavigation />
       <div className="Editor-main">
         <div className="Editor-questions">
