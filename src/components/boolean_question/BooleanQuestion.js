@@ -1,10 +1,11 @@
 import React from "react";
 import defaultImage from "./../../images/default_img.png";
 import "./BooleanQuestion.css";
-import { QuizActionContext } from "./../../contexts/quizContext";
+import { QuizContext, QuizActionContext } from "./../../contexts/quizContext";
 
 function BooleanQuestion(props) {
   const quizActionContext = React.useContext(QuizActionContext);
+  const quizContext = React.useContext(QuizContext);
   const deleteQuestion = (e) => {
     if (e.target.dataset.action === "delete") {
       quizActionContext.removeQuestion(props.id);
@@ -16,7 +17,7 @@ function BooleanQuestion(props) {
     }
   };
   return (
-    <div onClick={editQuestion} className="BooleanQuestion">
+    <div onClick={editQuestion} className={quizContext.isEditable.edit && quizContext.isEditable.question === props.id ? "BooleanQuestion BooleanQuestion-active" : "BooleanQuestion"}>
       <div className="BooleanQuestion-delete">
         <span onClick={deleteQuestion} data-action="delete" className="material-icons">
           delete
@@ -24,9 +25,7 @@ function BooleanQuestion(props) {
       </div>
       <div className="BooleanQuestion-question">
         <div className="BooleanQuestion-title">
-          <h3 className="BooleanQuestion-number-type">
-            {props.id + 1}. True or False
-          </h3>
+          <h3 className="BooleanQuestion-number-type">{props.id + 1}. True or False</h3>
         </div>
         <div className="BooleanQuestion-body">
           <div className="BooleanQuestion-info">

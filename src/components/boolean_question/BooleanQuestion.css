@@ -90,3 +90,7 @@
   height: 15px;
   background-color: var(--color-gray);
 }
+
+.BooleanQuestion-active {
+  background-color: var(--color-active);
+}

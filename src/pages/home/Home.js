@@ -3,11 +3,10 @@ import "./Home.css";
 import HomeNavigation from "./../../components/home_navigation/HomeNavigation";
 import DisplayMessage from "./../../components/display_message/DisplayMessage";
 import Quiz from "./../../components/quiz/Quiz";
-import { UserContext, UserActionContext } from "../../contexts/userContext";
+import {UserActionContext } from "../../contexts/userContext";
 import { httpAgent } from "./../../utils/util";
 
 function Home() {
-  const userContext = React.useContext(UserContext);
   const userActionContext = React.useContext(UserActionContext);
   const [isFetching, setIsFetching] = React.useState(true);
   const [quizzes, setQuizzes] = React.useState([]);
