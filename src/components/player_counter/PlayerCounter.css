@@ -1,0 +1,13 @@
+.PlayerCounter {
+  background-color: var(--login-color);
+  padding: 1rem;
+  border: 2px solid var(--color-black);
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.PlayerCounter-icon, .PlayerCounter-count{
+  font-size: 6rem !important;
+}

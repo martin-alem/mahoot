@@ -25,7 +25,6 @@
 }
 
 .Lobby-main{
-    height: 100%;
     background-color: var(--main-color);
     padding: 1rem;
 }

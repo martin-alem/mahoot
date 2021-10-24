@@ -1,6 +1,7 @@
 import React from "react";
 import "./Lobby.css";
 import Logo from "../../components/logo/Logo";
+import PlayerCounter from "./../../components/player_counter/PlayerCounter";
 
 function Lobby() {
   return (
@@ -13,6 +14,7 @@ function Lobby() {
       </div>
       <div className="Lobby-main">
         <div className="Lobby-nav">
+          <PlayerCounter />
           <Logo />
         </div>
         <div className="Lobby-players">
