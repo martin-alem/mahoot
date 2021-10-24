@@ -31,7 +31,7 @@ function Quiz(props) {
           <div className="Quiz-actions">
             <p className="Quiz-time">{convertTime(props.quiz.date)}</p>
             <p className="Quiz-play">1 play</p>
-            <PlayButton />
+            <PlayButton quizId={props.quiz._id} />
             <EditButton quizId={props.quiz._id} quizTitle={props.quiz.title} />
           </div>
         </div>

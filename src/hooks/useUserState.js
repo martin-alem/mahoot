@@ -1,5 +1,5 @@
 import React from "react";
-import { httpAgent, setLoggedIn } from "./../utils/util";
+import { httpAgent, setToLocalStorage } from "./../utils/util";
 
 function useUserState(initialValue) {
   const [userState, setUserState] = React.useState(initialValue);
@@ -13,7 +13,7 @@ function useUserState(initialValue) {
             .json()
             .then((data) => {
               if (data.statusCode === 200) {
-                setLoggedIn({ key: "loggedIn", value: true });
+                setToLocalStorage({ key: "loggedIn", value: true });
                 window.location.replace("/home");
               } else {
                 setMessage({ visible: true, type: "error", message: data.message });
@@ -44,7 +44,7 @@ function useUserState(initialValue) {
                 if (data.status === "partial") {
                   setMessage({ visible: true, type: "error", message: data.message });
                 } else {
-                  setLoggedIn({ key: "loggedIn", value: true });
+                  setToLocalStorage({ key: "loggedIn", value: true });
                   window.location.replace("/home");
                 }
               } else {
@@ -64,7 +64,7 @@ function useUserState(initialValue) {
         console.error(error);
       });
   };
-  return { userState, message, setMessage, linkedInLogin, githubLogin, setUserState, setLoggedIn };
+  return { userState, message, setMessage, linkedInLogin, githubLogin, setUserState, setToLocalStorage };
 }
 
 export default useUserState;

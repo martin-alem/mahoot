@@ -1,12 +1,12 @@
 import React from "react";
 import "./Lobby.css";
-import Logo from "../../components/logo/Logo";
 import PlayerCounter from "./../../components/player_counter/PlayerCounter";
 import StartGameButton from "./../../components/start_game_button/StartGameButton";
 import EndGameButton from "./../../components/end_game_button/EndGameButton";
 import LockGameButton from "./../../components/lock_game_button/LockGameButton";
 
-function Lobby() {
+function Lobby(props)
+{
   return (
     <div className="Lobby">
       <div className="Lobby-header">

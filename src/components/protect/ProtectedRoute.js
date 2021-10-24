@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { UserActionContext } from "../../contexts/userContext";
-import { httpAgent, getLoggedIn, setLoggedIn } from "./../../utils/util";
+import { httpAgent, getFromLocalStorage, setToLocalStorage } from "./../../utils/util";
 
 function ProtectedRoute({ component: Component, ...rest }) {
   const userActionContext = React.useContext(UserActionContext);
@@ -19,7 +19,7 @@ function ProtectedRoute({ component: Component, ...rest }) {
             })
             .catch((error) => console.error(error));
         } else {
-          setLoggedIn({ key: "loggedIn", value: false });
+          setToLocalStorage({ key: "loggedIn", value: false });
           window.location.replace("/");
         }
       })
@@ -31,7 +31,7 @@ function ProtectedRoute({ component: Component, ...rest }) {
     <Route
       {...rest}
       render={(props) => {
-        if (getLoggedIn()) {
+        if (getFromLocalStorage("loggedIn")) {
           return <Component {...props} />;
         } else {
           return <Redirect to={{ path: "/", state: { from: props.location } }} />;

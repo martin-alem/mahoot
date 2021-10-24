@@ -5,7 +5,7 @@ function LockGameButton() {
   return (
     <div className="LockGameButton">
       <button type="button" className="LockGameButton-button">
-        <span class="material-icons LockGameButton-text">lock_open</span>
+        <span className="material-icons LockGameButton-text">lock_open</span>
       </button>
     </div>
   );
