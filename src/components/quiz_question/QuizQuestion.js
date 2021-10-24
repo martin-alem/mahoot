@@ -32,7 +32,7 @@ function QuizQuestion(props) {
             <div className="QuizQuestion-duration">{props.question.duration}</div>
             <div className="QuizQuestion-question-media">
               <p>{props.question.title}</p>
-              <img className="QuizQuestion-media" src={defaultImage} alt="media" />
+              <img className="QuizQuestion-media" src={props.question.media || defaultImage} alt="media" />
             </div>
           </div>
           <div className="QuizQuestion-answers">

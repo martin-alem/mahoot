@@ -32,7 +32,7 @@ function BooleanQuestion(props) {
             <div className="BooleanQuestion-duration">{props.question.duration}</div>
             <div className="BooleanQuestion-question-media">
               <p>{props.question.title}</p>
-              <img className="BooleanQuestion-media" src={defaultImage} alt="media" />
+              <img className="BooleanQuestion-media" src={props.question.media || defaultImage} alt="media" />
             </div>
           </div>
           <div className="BooleanQuestion-answers">

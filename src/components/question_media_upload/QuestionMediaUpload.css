@@ -1,6 +1,7 @@
 .QuestionMediaUpload {
   width: 40%;
-  height: 300px;
+  height: 400px;
+  width: 500px;
   padding: 2rem;
   background-color: var(--color-white);
   margin-top: 5rem;
@@ -40,4 +41,10 @@
 }
 .SaveButton-text {
   font-weight: bold;
+}
+
+
+.QuestionMediaUpload-photo{
+  width: 300px;
+  height: 300px;
 }
