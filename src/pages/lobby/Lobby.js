@@ -2,6 +2,7 @@ import React from "react";
 import "./Lobby.css";
 import Logo from "../../components/logo/Logo";
 import PlayerCounter from "./../../components/player_counter/PlayerCounter";
+import StartGameButton from "./../../components/start_game_button/StartGameButton";
 
 function Lobby() {
   return (
@@ -15,7 +16,10 @@ function Lobby() {
       <div className="Lobby-main">
         <div className="Lobby-nav">
           <PlayerCounter />
-          <Logo />
+        <Logo />
+        <div className="Lobby-action">
+          <StartGameButton/>
+        </div>
         </div>
         <div className="Lobby-players">
           <p>Waiting for players...</p>
