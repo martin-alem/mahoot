@@ -17,8 +17,9 @@ function Lobby() {
       </div>
       <div className="Lobby-main">
         <div className="Lobby-nav">
-          <PlayerCounter />
-          <Logo />
+          <div className="Lobby-player-counter">
+            <PlayerCounter />
+          </div>
           <div className="Lobby-action">
             <LockGameButton />
             <StartGameButton />
@@ -26,7 +27,7 @@ function Lobby() {
           </div>
         </div>
         <div className="Lobby-players">
-          <p>Waiting for players...</p>
+          <p className="Lobby-waiting">Waiting for players...</p>
         </div>
       </div>
     </div>
