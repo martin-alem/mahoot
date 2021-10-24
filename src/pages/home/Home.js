@@ -20,7 +20,6 @@ function Home() {
         if (response.ok) {
           const results = await response.json();
           setIsFetching(false);
-          console.log(results)
           setQuizzes(results["quizzes"]);
         }
       } catch (error) {

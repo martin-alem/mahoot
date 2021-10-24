@@ -14,19 +14,17 @@ function SaveButton() {
   const saveQuestions = () => {
     const { questions, quiz } = quizContext;
 
-    if (quizContext.mode === "create") {
-      if (!quiz.title) {
-        userActionContext.setMessage({ visible: true, type: "warn", message: "You must provide a title for your quiz" });
+    if (!quiz.title) {
+      userActionContext.setMessage({ visible: true, type: "warn", message: "You must provide a title for your quiz" });
+    } else {
+      if (questions.length === 0) {
+        userActionContext.setMessage({ visible: true, type: "error", message: "You don't have any question in you quiz" });
+      } else if (!questions.every(questionTest)) {
+        userActionContext.setMessage({ visible: true, type: "error", message: "Please check your questions to make sure it has a title and answers matching the question typ" });
       } else {
-        if (questions.length === 0) {
-          userActionContext.setMessage({ visible: true, type: "error", message: "You don't have any question in you quiz" });
-        } else if (!questions.every(questionTest)) {
-          userActionContext.setMessage({ visible: true, type: "error", message: "Please check your questions to make sure it has a title and answers" });
-        } else {
-          quizActionContext.resetState();
-          setIsSaving(true);
-          submitQuiz({ questions, quiz });
-        }
+        quizActionContext.resetState();
+        setIsSaving(true);
+        submitQuiz({ questions, quiz });
       }
     }
   };
@@ -50,7 +48,13 @@ function SaveButton() {
   };
 
   const questionTest = (question) => {
-    return question["title"] !== "" && question["answers"].length > 0;
+    if (question.questionType === "quiz" && question.answers.length === 4 && question.title !== "") {
+      return true;
+    } else if (question.questionType === "boolean" && question.answers.length === 2 && question.title !== "") {
+      return true;
+    } else {
+      return false;
+    }
   };
   return doneSaving ? (
     <Redirect to="/home" />

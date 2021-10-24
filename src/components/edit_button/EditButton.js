@@ -1,13 +1,12 @@
 import React from "react";
 import "./EditButton.css";
 import { httpAgent } from "./../../utils/util";
-import { QuizContext, QuizActionContext } from "./../../contexts/quizContext";
+import {QuizActionContext } from "./../../contexts/quizContext";
 import { Redirect } from "react-router-dom";
 
 function EditButton(props) {
   const [doneFetching, setDoneFetching] = React.useState(false);
   const quizActionContext = React.useContext(QuizActionContext);
-  const quizContext = React.useContext(QuizContext);
   const editQuiz = async () => {
     try {
       const url = `http://localhost:4000/api/v1/question/${props.quizId}`;
@@ -29,7 +28,7 @@ function EditButton(props) {
     <Redirect to="/editor" />
   ) : (
     <div className="EditButton">
-      <button onClick={editQuiz} className="EditButton-button" type="button">
+      <button className="EditButton-button" type="button">
         <span className="material-icons">edit</span>
         <span className="EditButton-text">Edit</span>
       </button>
