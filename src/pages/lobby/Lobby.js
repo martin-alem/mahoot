@@ -3,6 +3,7 @@ import "./Lobby.css";
 import Logo from "../../components/logo/Logo";
 import PlayerCounter from "./../../components/player_counter/PlayerCounter";
 import StartGameButton from "./../../components/start_game_button/StartGameButton";
+import EndGameButton from "./../../components/end_game_button/EndGameButton"
 
 function Lobby() {
   return (
@@ -19,6 +20,7 @@ function Lobby() {
         <Logo />
         <div className="Lobby-action">
           <StartGameButton/>
+          <EndGameButton />
         </div>
         </div>
         <div className="Lobby-players">
