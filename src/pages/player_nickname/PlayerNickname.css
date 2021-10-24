@@ -1,0 +1,42 @@
+.PlayerNickname {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.PlayerNickname-login {
+  padding: 4rem;
+  background-color: var(--login-color);
+  border-radius: 3px;
+}
+
+.PlayerNickname-input {
+  width: 400px;
+  padding: 2rem;
+  outline: none;
+  border: none;
+  border: 1px solid var(--color-black);
+  border-radius: 4px;
+  font-weight: bolder;
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.PlayerNickname-submit {
+  width: 100%;
+  margin-top: 10px;
+  padding: 2rem;
+  outline: none;
+  border: none;
+  background-color: var(--main-color);
+  color: var(--color-white);
+  font-size: 3rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bolder;
+}
