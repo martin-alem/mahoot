@@ -14,17 +14,19 @@ function SaveButton() {
   const saveQuestions = () => {
     const { questions, quiz } = quizContext;
 
-    if (!quiz.title) {
-      userActionContext.setMessage({ visible: true, type: "warn", message: "You must provide a title for your quiz" });
-    } else {
-      if (questions.length === 0) {
-        userActionContext.setMessage({ visible: true, type: "error", message: "You don't have any question in you quiz" });
-      } else if (!questions.every(questionTest)) {
-        userActionContext.setMessage({ visible: true, type: "error", message: "Please check your questions to make sure it has a title and answers" });
+    if (quizContext.mode === "create") {
+      if (!quiz.title) {
+        userActionContext.setMessage({ visible: true, type: "warn", message: "You must provide a title for your quiz" });
       } else {
-        quizActionContext.resetState();
-        setIsSaving(true);
-        submitQuiz({ questions, quiz });
+        if (questions.length === 0) {
+          userActionContext.setMessage({ visible: true, type: "error", message: "You don't have any question in you quiz" });
+        } else if (!questions.every(questionTest)) {
+          userActionContext.setMessage({ visible: true, type: "error", message: "Please check your questions to make sure it has a title and answers" });
+        } else {
+          quizActionContext.resetState();
+          setIsSaving(true);
+          submitQuiz({ questions, quiz });
+        }
       }
     }
   };

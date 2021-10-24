@@ -7,7 +7,7 @@ function QuestionTypeInput() {
   const quizActionContext = React.useContext(QuizActionContext);
   const { edit } = quizContext.isEditable;
   const handleSelectChange = (e) => {
-    quizActionContext.performEdit({ type: "type", value: e.target.value });
+    quizActionContext.performEdit({ type: "questionType", value: e.target.value });
   };
   return (
     <div className="QuestionTypeInput">

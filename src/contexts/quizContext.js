@@ -9,10 +9,11 @@ function QuizProvider(props) {
     title: "",
     media: "",
     answers: [],
-    type: "quiz",
+    questionType: "quiz",
     duration: 5,
     point: "standard",
   };
+  const [mode, setMode] = React.useState("create");
   const [quiz, setQuiz] = React.useState({ id: "", title: "" });
   const [questions, setQuestion] = React.useState([]);
   const [isEditable, setIsEditable] = React.useState({ edit: false, question: null });
@@ -62,9 +63,10 @@ function QuizProvider(props) {
     setQuiz({ id: "", title: "" });
     setIsEditable({ edit: false, question: null });
     setCurrentQuestion(defaultQuestion);
+    setMode("create");
   };
   return (
-    <QuizContext.Provider value={{ questions, isEditable, currentQuestion, quiz }}>
+    <QuizContext.Provider value={{ questions, isEditable, currentQuestion, quiz, mode }}>
       <QuizActionContext.Provider
         value={{
           addQuestion,
@@ -73,7 +75,9 @@ function QuizProvider(props) {
           performEdit,
           setQuiz,
           resetState,
+          setQuestion,
           duplicateQuestion,
+          setMode,
         }}
       >
         {props.children}

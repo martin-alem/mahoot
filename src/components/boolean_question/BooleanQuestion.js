@@ -49,4 +49,4 @@ function BooleanQuestion(props) {
   );
 }
 
-export default BooleanQuestion;
+export default React.memo(BooleanQuestion);
