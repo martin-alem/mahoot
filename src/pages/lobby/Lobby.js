@@ -3,7 +3,8 @@ import "./Lobby.css";
 import Logo from "../../components/logo/Logo";
 import PlayerCounter from "./../../components/player_counter/PlayerCounter";
 import StartGameButton from "./../../components/start_game_button/StartGameButton";
-import EndGameButton from "./../../components/end_game_button/EndGameButton"
+import EndGameButton from "./../../components/end_game_button/EndGameButton";
+import LockGameButton from "./../../components/lock_game_button/LockGameButton";
 
 function Lobby() {
   return (
@@ -17,11 +18,12 @@ function Lobby() {
       <div className="Lobby-main">
         <div className="Lobby-nav">
           <PlayerCounter />
-        <Logo />
-        <div className="Lobby-action">
-          <StartGameButton/>
-          <EndGameButton />
-        </div>
+          <Logo />
+          <div className="Lobby-action">
+            <LockGameButton />
+            <StartGameButton />
+            <EndGameButton />
+          </div>
         </div>
         <div className="Lobby-players">
           <p>Waiting for players...</p>
