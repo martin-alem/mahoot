@@ -5,7 +5,7 @@ import ProtectedRoute from "./../../components/protect/ProtectedRoute";
 import Login from "./../../pages/login/Login";
 import Home from "./../../pages/home/Home";
 import Editor from "../../pages/editor/Editor";
-import WaitRoom from "../../pages/wait_room/WaitRoom";
+import Lobby from "../../pages/lobby/Lobby";
 import { Route, Switch } from "react-router-dom";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
             <Route exact path="/" component={Login} />
             <ProtectedRoute exact path="/home" component={Home} />
             <ProtectedRoute exact path="/editor" component={Editor} />
-            <ProtectedRoute exact path="/wait_room" component={WaitRoom} />
+            <ProtectedRoute exact path="/lobby" component={Lobby} />
           </Switch>
         </QuizProvider>
       </UserProvider>

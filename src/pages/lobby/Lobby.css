@@ -1,0 +1,31 @@
+.Lobby {
+  width: 100vw;
+  height: 100vh;
+}
+
+.Lobby-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.Lobby-header p{
+    font-size: 5rem;
+}
+
+.Game-pin, .Game-url{
+    font-weight: bolder;
+    color: var(--color-exit);
+}
+
+.Game-pin{
+    margin-top: -3rem;
+}
+
+.Lobby-main{
+    height: 100%;
+    background-color: var(--main-color);
+    padding: 1rem;
+}
