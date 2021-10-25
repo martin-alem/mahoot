@@ -29,7 +29,7 @@ function Home() {
       }
     };
 
-    fetchQuiz();
+    // fetchQuiz();
   }, []);
   return (
     <div className="Home">
