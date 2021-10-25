@@ -1,10 +1,19 @@
 import React from "react";
+import { Redirect } from "react-router";
 import "./EndGameButton.css";
 
 function EndGameButton() {
-  return (
+  const [endGame, setEndGame] = React.useState(false);
+  const cancelGame = () => {
+    window.localStorage.removeItem("quizId");
+    window.localStorage.removeItem("roomId");
+    setEndGame(true);
+  };
+  return endGame ? (
+    <Redirect to="/home" />
+  ) : (
     <div className="EndGameButton">
-      <button type="button" className="EndGameButton-button">
+      <button onClick={cancelGame} type="button" className="EndGameButton-button">
         <span className="EndGameButton-text">End</span>
       </button>
     </div>
