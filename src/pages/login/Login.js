@@ -13,13 +13,13 @@ function Login(props) {
 
   React.useEffect(() => {
     if (Object.keys(params).length > 0 && params["code"] && params["state"]) {
-      //http://localhost:5000/api/v1/linkedin/auth
-      const url = "http://api.auth.mahoot.io/api/v1/linkedin/auth";
+      
+      const url = "http://localhost:5000/api/v1/linkedin/auth";
       const method = "POST";
       const body = params;
       userActionContext.linkedInLogin(url, method, body);
     } else if (Object.keys(params).length > 0 && params["code"]) {
-      const url = "http://api.auth.mahoot.io/api/v1/github/auth";
+      const url = "http://localhost:5000/api/v1/github/auth";
       const method = "POST";
       const body = params;
       userActionContext.githubLogin(url, method, body);

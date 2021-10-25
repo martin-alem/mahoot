@@ -14,7 +14,7 @@ function PlayerLogin() {
   };
   const joinGame = () => {
     if (pinValue !== "") {
-      const socket = new WebSocket(`wss://mahoot-socket-server-n8thp.ondigitalocean.app/api/play`);
+      const socket = new WebSocket(`ws://localhost:8080/api/play`);
       socket.addEventListener("open", (event) => {
         playerContext.setPlayerSocket(socket);
         const joinMessage = {
