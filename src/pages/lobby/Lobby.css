@@ -5,64 +5,71 @@
   flex-direction: column;
 }
 
-.Lobby-header{
-    height: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
+.Lobby-header {
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
-.Lobby-header p{
-    font-size: 5rem;
+.Lobby-header p {
+  font-size: 5rem;
 }
 
-.Game-pin, .Game-url{
-    font-weight: bolder;
-    color: var(--color-exit);
+.Game-pin,
+.Game-url {
+  font-weight: bolder;
+  color: var(--color-exit);
 }
 
-.Game-pin{
-    margin-top: -3rem;
+.Game-pin {
+  margin-top: -3rem;
 }
 
-.Lobby-main{
-    height: 80%;
-    background-color: var(--main-color);
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
+.Lobby-main {
+  height: 80%;
+  background-color: var(--main-color);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.Lobby-nav{
-    height: 10%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.Lobby-nav {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.Lobby-player-counter{
-    margin-top: 1rem;
+.Lobby-player-counter {
+  margin-top: 1rem;
 }
-.Lobby-action{
-    width: 10%;
-    display: flex;
-    justify-content:space-between;
-    gap: 3rem;
-    align-items: center;
-}
-
-.Lobby-players{
-    display: flex;
-    justify-content:center;
-    margin-top: 3rem;
-    height: 100%;
-    overflow-y: auto;
+.Lobby-action {
+  /* width: 10%; */
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  align-items: center;
 }
 
-.Lobby-waiting{
-    font-size: 3rem;
-    color: var(--color-white);
+.Lobby-players {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.Lobby-waiting {
+  font-size: 3rem;
+  color: var(--color-white);
+}
+
+.Lobby-player {
+  margin: 2rem;
 }
