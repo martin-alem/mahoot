@@ -11,6 +11,7 @@ import Lobby from "../../pages/lobby/Lobby";
 import PlayerLogin from "./../../pages/player_login/PlayerLogin";
 import PlayerNickname from "../../pages/player_nickname/PlayerNickname";
 import GameRoom from "./../../pages/game_room/GameRoom";
+import GameCenter from "./../../pages/game_center/GameCenter";
 import { Route, Switch } from "react-router-dom";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
                 <Route exact path="/play" component={PlayerLogin} />
                 <Route exact path="/player_nickname" component={PlayerNickname} />
                 <Route exact path="/game_room" component={GameRoom} />
+                <Route exact path="/game_center" component={GameCenter} />
               </Switch>
             </PlayerProvider>
           </GameProvider>

@@ -12,13 +12,15 @@ function Login(props) {
   const params = extractSearchParams(props.location.search);
 
   React.useEffect(() => {
-    if (Object.keys(params).length > 0 && params["code"] && params["state"]) {
-      const url = "http://localhost:5000/api/v1/linkedin/auth";
+    if (Object.keys(params).length > 0 && params["code"] && params["state"])
+    {
+      //http://localhost:5000/api/v1/linkedin/auth
+      const url = "https://mahoot-auth-server-iwzss.ondigitalocean.app/api/v1/linkedin/auth";
       const method = "POST";
       const body = params;
       userActionContext.linkedInLogin(url, method, body);
     } else if (Object.keys(params).length > 0 && params["code"]) {
-      const url = "http://localhost:5000/api/v1/github/auth";
+      const url = "https://mahoot-auth-server-iwzss.ondigitalocean.app/api/v1/github/auth";
       const method = "POST";
       const body = params;
       userActionContext.githubLogin(url, method, body);

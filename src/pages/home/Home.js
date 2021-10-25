@@ -14,7 +14,7 @@ function Home() {
   React.useEffect(() => {
     const fetchQuiz = async () => {
       try {
-        const url = "http://localhost:4000/api/v1/quiz";
+        const url = "https://mahoot-main-server-aey8w.ondigitalocean.app/api/v1/quiz";
         const method = "GET";
         const response = await httpAgent(url, method, {});
         if (response.ok) {

@@ -31,7 +31,7 @@ function SaveButton() {
 
   const submitQuiz = async (quiz) => {
     try {
-      const url = "http://localhost:4000/api/v1/quiz";
+      const url = "https://mahoot-main-server-aey8w.ondigitalocean.app/api/v1/quiz";
       const method = "POST";
       const response = await httpAgent(url, method, quiz);
       if (response.ok) {

@@ -2,8 +2,18 @@ import React from "react";
 import "./GameRoom.css";
 import Logo from "./../../components/logo/Logo";
 import { getFromLocalStorage, setToLocalStorage } from "./../../utils/util";
+import { PlayerContext } from "./../../contexts/playerContext";
 
 function GameRoom() {
+  const playerContext = React.useContext(PlayerContext);
+  const socket = playerContext.playerSocket;
+
+  socket.addEventListener("message", (event) => {
+    const msg = JSON.parse(event.data);
+    if (msg.type === "start") {
+      console.log("The Game is about to start with room id: " + msg.roomId);
+    }
+  });
   return (
     <div className="GameRoom">
       <div className="GameRoom-room">

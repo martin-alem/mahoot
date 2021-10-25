@@ -1,0 +1,36 @@
+.GameCenter {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.GameCenter-room {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.GameCenter-intro {
+  color: var(--color-white);
+  font-size: 5rem;
+}
+
+.GameCenter-sub {
+  color: var(--color-white);
+  font-size: 2.5rem;
+}
+
+.GameCenter-stats{
+  width: 100%;
+  padding: 2rem;
+  background-color: var(--login-color);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
