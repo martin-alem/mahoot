@@ -15,8 +15,8 @@ export const httpAgent = async (url, method, data) => {
   const init = {
     method: method,
     headers: {
-      "Content-Type": "application/json",
       Accept: "application/json",
+      "Content-Type": "application/json",
     },
     mode: "cors",
     credentials: "include",
@@ -45,7 +45,6 @@ export const setToLocalStorage = (data) => {
 export const getFromLocalStorage = (key) => {
   return JSON.parse(window.localStorage.getItem(key));
 };
-
 
 export const convertTime = (date) => {
   const current = new Date();
