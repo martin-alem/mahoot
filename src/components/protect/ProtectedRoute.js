@@ -6,7 +6,7 @@ import { httpAgent, getFromLocalStorage, setToLocalStorage } from "./../../utils
 function ProtectedRoute({ component: Component, ...rest }) {
   const userActionContext = React.useContext(UserActionContext);
   React.useEffect(() => {
-    const url = "http://localhost:4000/";
+    const url = "https://api.main.mahoot.io/";
     const method = "GET";
     const data = {};
     httpAgent(url, method, data)

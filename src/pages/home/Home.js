@@ -3,7 +3,7 @@ import "./Home.css";
 import HomeNavigation from "./../../components/home_navigation/HomeNavigation";
 import DisplayMessage from "./../../components/display_message/DisplayMessage";
 import Quiz from "./../../components/quiz/Quiz";
-import {UserActionContext } from "../../contexts/userContext";
+import { UserActionContext } from "../../contexts/userContext";
 import { httpAgent } from "./../../utils/util";
 
 function Home() {
@@ -14,7 +14,7 @@ function Home() {
   React.useEffect(() => {
     const fetchQuiz = async () => {
       try {
-        const url = "http://localhost:4000/api/v1/quiz";
+        const url = "https://api.main.mahoot.io/api/v1/quiz";
         const method = "GET";
         const response = await httpAgent(url, method, {});
         if (response.ok) {
@@ -23,7 +23,7 @@ function Home() {
           setQuizzes(results["quizzes"]);
         }
       } catch (error) {
-         setIsFetching(false);
+        setIsFetching(false);
         userActionContext.setMessage({ visible: true, type: "error", message: "Unable to fetch quizzes." });
         console.log(error);
       }
@@ -35,7 +35,7 @@ function Home() {
     <div className="Home">
       <DisplayMessage />
       <HomeNavigation />
-      <div className="Home-mahoot">{isFetching ? <p>Fetching quizzes...</p> : quizzes.map(quiz => <Quiz quiz={quiz} key={quiz._id}/>)}</div>
+      <div className="Home-mahoot">{isFetching ? <p>Fetching quizzes...</p> : quizzes.map((quiz) => <Quiz quiz={quiz} key={quiz._id} />)}</div>
     </div>
   );
 }
