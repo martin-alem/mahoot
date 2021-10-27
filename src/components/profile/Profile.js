@@ -10,6 +10,11 @@ function Profile() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const logout = () => {
+    window.localStorage.removeItem("access_token");
+    window.localStorage.removeItem("loggedIn");
+    window.location.replace("/");
+  };
   return (
     <div className="Profile">
       <div className="Profile-image">
@@ -24,8 +29,9 @@ function Profile() {
             <span className="material-icons">settings</span>Settings
           </li>
           <hr />
-          <li>
-            <span className="material-icons">logout</span>Sign out
+          <li onClick={logout}>
+            <span className="material-icons">logout</span>
+            Sign out
           </li>
         </ul>
       </div>

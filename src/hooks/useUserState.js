@@ -13,7 +13,9 @@ function useUserState(initialValue) {
             .json()
             .then((data) => {
               if (data.statusCode === 200) {
+                console.log(data);
                 setToLocalStorage({ key: "loggedIn", value: true });
+                setToLocalStorage({ key: "access_token", value: data.accessToken });
                 window.location.replace("/home");
               } else {
                 setMessage({ visible: true, type: "error", message: data.message });
@@ -45,6 +47,7 @@ function useUserState(initialValue) {
                   setMessage({ visible: true, type: "error", message: data.message });
                 } else {
                   setToLocalStorage({ key: "loggedIn", value: true });
+                  setToLocalStorage({ key: "access_token", value: data.accessToken });
                   window.location.replace("/home");
                 }
               } else {

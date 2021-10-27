@@ -12,12 +12,12 @@ function BooleanAnswer() {
   const [option2, setOption2, setState2] = useFormState("");
 
   const answers = [
-    { answer: option1, correct: false },
-    { answer: option2, correct: false },
+    { answer: option1, correct: false, shape: "square" },
+    { answer: option2, correct: false, shape: "circle" },
   ];
 
   const selectAnswer = (e) => {
-    const option = e.target.dataset.opt;
+    const option = e.target.dataset;
     if (edit && answers.every((answer) => answer.answer !== "")) {
       if (option !== currentAnswer.option && currentAnswer.target !== null) {
         currentAnswer.target.textContent = "radio_button_unchecked";
@@ -42,7 +42,7 @@ function BooleanAnswer() {
     if (quizContext.currentQuestion.answers === undefined || quizContext.currentQuestion.answers.length === 0) {
       setState1("");
       setState2("");
-    } else {
+    } else if (quizContext.currentQuestion.answers.length === 2) {
       setState1(quizContext.currentQuestion.answers[0].answer);
       setState2(quizContext.currentQuestion.answers[1].answer);
     }

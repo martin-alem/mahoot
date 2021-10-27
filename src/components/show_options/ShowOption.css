@@ -1,0 +1,11 @@
+.ShowOption{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.ShowOption-img{
+    width: 400px;
+    height: 300px;
+}

@@ -1,12 +1,16 @@
 .Editor-main {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
   display: flex;
   align-items: stretch;
 }
 
 .Editor-questions {
   background-color: var(--color-white);
+  width: 25%;
+}
+
+.Editor-questions-dark {
+  background-color: var(--color-black);
   width: 25%;
 }
 
@@ -18,7 +22,20 @@
   align-items: center;
 }
 
+.Editor-edit-dark {
+  background-color: var(--color-light-black);
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .Editor-question-params {
   background-color: var(--color-white);
+  width: 15%;
+}
+
+.Editor-question-params-dark {
+  background-color: var(--color-black);
   width: 15%;
 }

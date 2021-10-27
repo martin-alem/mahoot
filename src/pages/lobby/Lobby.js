@@ -5,19 +5,16 @@ import StartGameButton from "./../../components/start_game_button/StartGameButto
 import EndGameButton from "./../../components/end_game_button/EndGameButton";
 import LockGameButton from "./../../components/lock_game_button/LockGameButton";
 import { getFromLocalStorage, setToLocalStorage } from "./../../utils/util";
-import {GameContext} from "./../../contexts/gameContext"
+import { GameContext } from "./../../contexts/gameContext";
 
-function Lobby()
-{
+function Lobby() {
   const gameContext = React.useContext(GameContext);
   const [players, setPlayers] = React.useState([]);
   React.useEffect(() => {
     const quizId = getFromLocalStorage("quizId");
     const socket = new WebSocket(`ws://localhost:8080/api/admin`);
     gameContext.setSocket(socket);
-    socket.addEventListener("open", (event) =>
-    {
-      
+    socket.addEventListener("open", (event) => {
       const connectMessage = { type: "create", quizId: quizId };
       socket.send(JSON.stringify(connectMessage));
     });

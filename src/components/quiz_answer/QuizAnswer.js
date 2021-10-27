@@ -14,10 +14,10 @@ function QuizAnswer() {
   const [option4, setOption4, setState4] = useFormState("");
 
   const answers = [
-    { answer: option1, correct: false },
-    { answer: option2, correct: false },
-    { answer: option3, correct: false },
-    { answer: option4, correct: false },
+    { answer: option1, correct: false, shape: "square" },
+    { answer: option2, correct: false, shape: "circle" },
+    { answer: option3, correct: false, shape: "hexagon" },
+    { answer: option4, correct: false, shape: "star" },
   ];
 
   const selectAnswer = (e) => {
@@ -48,7 +48,7 @@ function QuizAnswer() {
       setState2("");
       setState3("");
       setState4("");
-    } else {
+    } else if (quizContext.currentQuestion.answers.length === 4) {
       setState1(quizContext.currentQuestion.answers[0].answer);
       setState2(quizContext.currentQuestion.answers[1].answer);
       setState3(quizContext.currentQuestion.answers[2].answer);

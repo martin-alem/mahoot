@@ -52,7 +52,9 @@ function QuizProvider(props) {
   };
 
   const duplicateQuestion = () => {
-    const currentQ = { ...currentQuestion };
+    let currentQ = { ...currentQuestion };
+    delete currentQ._id;
+    delete currentQ._v;
     setQuestion((prevState) => {
       return [...prevState, currentQ];
     });

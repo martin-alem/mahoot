@@ -9,23 +9,26 @@ import BooleanAnswer from "../../components/boolean_answer/BooleanAnswer";
 import QuizAnswer from "../../components/quiz_answer/QuizAnswer";
 import DisplayMessage from "../../components/display_message/DisplayMessage";
 import { QuizContext } from "./../../contexts/quizContext";
+import { ThemeContext } from "./../../contexts/themeContext";
 
-function Editor(props) {
+function Editor() {
   const quizContext = React.useContext(QuizContext);
+  const themContext = React.useContext(ThemeContext);
+  const theme = themContext.theme;
   return (
     <div className="Editor">
       <DisplayMessage />
       <EditorNavigation />
       <div className="Editor-main">
-        <div className="Editor-questions">
+        <div className={theme === "light_mode" ? "Editor-questions" : "Editor-questions-dark"}>
           <QuestionContainer />
         </div>
-        <div className="Editor-edit">
+        <div className={theme === "light_mode" ? "Editor-edit" : "Editor-edit-dark"}>
           <QuestionInput />
           <QuestionMediaUpload />
           {quizContext.currentQuestion.questionType === "quiz" ? <QuizAnswer /> : <BooleanAnswer />}
         </div>
-        <div className="Editor-question-params">
+        <div className={theme === "light_mode" ? "Editor-question-params" : "Editor-question-params-dark"}>
           <QuestionConfig />
         </div>
       </div>

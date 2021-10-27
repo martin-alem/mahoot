@@ -7,6 +7,7 @@ function EndGameButton() {
   const cancelGame = () => {
     window.localStorage.removeItem("quizId");
     window.localStorage.removeItem("roomId");
+    window.localStorage.removeItem("questions");
     setEndGame(true);
   };
   return endGame ? (

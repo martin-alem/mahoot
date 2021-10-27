@@ -8,7 +8,12 @@ function TitleInput() {
   const [title, setTitle] = React.useState("");
   const handleChange = (e) => {
     setTitle(e.target.value);
-    quizActionContext.setQuiz({ title: e.target.value });
+    quizActionContext.setQuiz((prevState) => {
+      return {
+        ...prevState,
+        title: e.target.value,
+      };
+    });
   };
   return (
     <div className="TitleInput">

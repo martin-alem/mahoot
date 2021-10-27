@@ -14,7 +14,6 @@ function LockGameButton() {
 
   if (gameSocket) {
     gameSocket.addEventListener("message", (event) => {
-      console.log(event.data);
       const msg = JSON.parse(event.data);
       if (msg.type === "room_state") {
         setGameLock(!msg.state);

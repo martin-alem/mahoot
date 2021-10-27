@@ -4,7 +4,7 @@ import HomeNavigation from "./../../components/home_navigation/HomeNavigation";
 import DisplayMessage from "./../../components/display_message/DisplayMessage";
 import Quiz from "./../../components/quiz/Quiz";
 import { UserActionContext } from "../../contexts/userContext";
-import { httpAgent } from "./../../utils/util";
+import { httpAgent, getFromLocalStorage } from "./../../utils/util";
 
 function Home() {
   const userActionContext = React.useContext(UserActionContext);
@@ -14,7 +14,8 @@ function Home() {
   React.useEffect(() => {
     const fetchQuiz = async () => {
       try {
-        const url = "https://api.main.mahoot.io/api/v1/quiz";
+        const access_token = getFromLocalStorage("access_token");
+        const url = `http://localhost:4000/api/v1/quiz?access_token=${access_token}`;
         const method = "GET";
         const response = await httpAgent(url, method, {});
         if (response.ok) {

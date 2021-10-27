@@ -1,4 +1,5 @@
 import "./App.css";
+import { ThemeProvider } from "../../contexts/themeContext";
 import { UserProvider } from "../../contexts/userContext";
 import { QuizProvider } from "../../contexts/quizContext";
 import { GameProvider } from "../../contexts/gameContext";
@@ -17,24 +18,26 @@ import { Route, Switch } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <UserProvider>
-        <QuizProvider>
-          <GameProvider>
-            <PlayerProvider>
-              <Switch>
-                <Route exact path="/" component={Login} />
-                <ProtectedRoute exact path="/home" component={Home} />
-                <ProtectedRoute exact path="/editor" component={Editor} />
-                <ProtectedRoute exact path="/lobby" component={Lobby} />
-                <Route exact path="/play" component={PlayerLogin} />
-                <Route exact path="/player_nickname" component={PlayerNickname} />
-                <Route exact path="/game_room" component={GameRoom} />
-                <Route exact path="/game_center" component={GameCenter} />
-              </Switch>
-            </PlayerProvider>
-          </GameProvider>
-        </QuizProvider>
-      </UserProvider>
+      <ThemeProvider>
+        <UserProvider>
+          <QuizProvider>
+            <GameProvider>
+              <PlayerProvider>
+                <Switch>
+                  <Route exact path="/" component={Login} />
+                  <ProtectedRoute exact path="/home" component={Home} />
+                  <ProtectedRoute exact path="/editor" component={Editor} />
+                  <ProtectedRoute exact path="/lobby" component={Lobby} />
+                  <Route exact path="/play" component={PlayerLogin} />
+                  <Route exact path="/player_nickname" component={PlayerNickname} />
+                  <Route exact path="/game_room" component={GameRoom} />
+                  <Route exact path="/game_center" component={GameCenter} />
+                </Switch>
+              </PlayerProvider>
+            </GameProvider>
+          </QuizProvider>
+        </UserProvider>
+      </ThemeProvider>
     </div>
   );
 }
