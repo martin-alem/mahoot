@@ -7,7 +7,7 @@ function ProtectedRoute({ component: Component, ...rest }) {
   const userActionContext = React.useContext(UserActionContext);
   React.useEffect(() => {
     const access_token = getFromLocalStorage("access_token");
-    const url = `http://localhost:4000/?access_token=${access_token}`;
+    const url = `https://mahoot-main-server-3ddtc.ondigitalocean.app/?access_token=${access_token}`;
     const method = "GET";
     const data = {};
     httpAgent(url, method, data)

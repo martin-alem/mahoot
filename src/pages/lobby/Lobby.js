@@ -12,7 +12,7 @@ function Lobby() {
   const [players, setPlayers] = React.useState([]);
   React.useEffect(() => {
     const quizId = getFromLocalStorage("quizId");
-    const socket = new WebSocket(`ws://localhost:8080/api/admin`);
+    const socket = new WebSocket(`wss://mahoot-socket-server-yqads.ondigitalocean.app/api/admin`);
     gameContext.setSocket(socket);
     socket.addEventListener("open", (event) => {
       const connectMessage = { type: "create", quizId: quizId };
