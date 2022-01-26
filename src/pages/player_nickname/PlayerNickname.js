@@ -9,7 +9,7 @@ function PlayerNickname() {
   const playerContext = React.useContext(PlayerContext);
   const [hasEntered, setHasEntered] = React.useState(false);
   const [nickname, setNickname] = React.useState("");
-  const handleChange = (e) => {
+  const handleChange = e => {
     setNickname(e.target.value);
   };
 
@@ -24,7 +24,7 @@ function PlayerNickname() {
       };
       socket.send(JSON.stringify(joinMessage));
 
-      socket.addEventListener("message", (event) => {
+      socket.addEventListener("message", event => {
         const msg = JSON.parse(event.data);
         if (msg.type === "roomId") {
           setToLocalStorage({ key: "nickname", value: nickname });
@@ -34,7 +34,7 @@ function PlayerNickname() {
         }
       });
 
-      socket.addEventListener("close", (event) => {
+      socket.addEventListener("close", event => {
         console.log("Connection closed");
       });
     } else {

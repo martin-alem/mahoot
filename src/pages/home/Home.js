@@ -15,7 +15,7 @@ function Home() {
     const fetchQuiz = async () => {
       try {
         const access_token = getFromLocalStorage("access_token");
-        const url = `https://mahoot-main-server-3ddtc.ondigitalocean.app/api/v1/quiz?access_token=${access_token}`;
+        const url = `http://localhost:4000/api/v1/quiz?access_token=${access_token}`;
         const method = "GET";
         const response = await httpAgent(url, method, {});
         if (response.ok) {
@@ -36,7 +36,7 @@ function Home() {
     <div className="Home">
       <DisplayMessage />
       <HomeNavigation />
-      <div className="Home-mahoot">{isFetching ? <p>Fetching quizzes...</p> : quizzes.map((quiz) => <Quiz quiz={quiz} key={quiz._id} />)}</div>
+      <div className="Home-mahoot">{isFetching ? <p>Fetching quizzes...</p> : quizzes.map(quiz => <Quiz quiz={quiz} key={quiz._id} />)}</div>
     </div>
   );
 }

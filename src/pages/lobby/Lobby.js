@@ -12,26 +12,26 @@ function Lobby() {
   const [players, setPlayers] = React.useState([]);
   React.useEffect(() => {
     const quizId = getFromLocalStorage("quizId");
-    const socket = new WebSocket(`wss://mahoot-socket-server-yqads.ondigitalocean.app/api/admin`);
+    const socket = new WebSocket(`ws://localhost:8080/api/admin`);
     gameContext.setSocket(socket);
-    socket.addEventListener("open", (event) => {
+    socket.addEventListener("open", event => {
       const connectMessage = { type: "create", quizId: quizId };
       socket.send(JSON.stringify(connectMessage));
     });
 
-    socket.addEventListener("message", (event) => {
+    socket.addEventListener("message", event => {
       const msg = JSON.parse(event.data);
       if (msg.type === "code") {
         setToLocalStorage({ key: "roomId", value: msg.gameCode });
         document.querySelector(".Game-pin").textContent = msg.gameCode;
       } else if (msg.type === "join") {
-        setPlayers((prevState) => {
+        setPlayers(prevState => {
           return [...prevState, { nickname: msg.nickname }];
         });
       }
     });
 
-    socket.addEventListener("close", (event) => {
+    socket.addEventListener("close", event => {
       console.log("Connection closed");
     });
   }, []);

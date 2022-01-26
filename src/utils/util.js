@@ -1,9 +1,9 @@
-export const extractSearchParams = (search) => {
+export const extractSearchParams = search => {
   const queryString = {};
   if (search !== "") {
     search = search.slice(1); // extract the ? character at the front of the string
     const params = search.split("&");
-    params.forEach((param) => {
+    params.forEach(param => {
       const [name, value] = param.split("=");
       queryString[name] = value;
     });
@@ -20,10 +20,10 @@ export const httpAgent = async (url, method, data) => {
     },
     mode: "cors",
     credentials: "include",
-    // cache: "default",
-    // redirect: "follow",
-    // referrer: "smack",
-    // referrerPolicy: "same-origin",
+    cache: "default",
+    redirect: "follow",
+    referrer: "smack",
+    referrerPolicy: "same-origin",
   };
 
   if (method !== "GET" && method !== "HEAD") {
@@ -38,15 +38,15 @@ export const httpAgent = async (url, method, data) => {
   }
 };
 
-export const setToLocalStorage = (data) => {
+export const setToLocalStorage = data => {
   window.localStorage.setItem([data.key], JSON.stringify(data.value));
 };
 
-export const getFromLocalStorage = (key) => {
+export const getFromLocalStorage = key => {
   return JSON.parse(window.localStorage.getItem(key));
 };
 
-export const convertTime = (date) => {
+export const convertTime = date => {
   const current = new Date();
   const dTime = new Date(date);
   if (current.getHours() - dTime.getHours() > 1) {

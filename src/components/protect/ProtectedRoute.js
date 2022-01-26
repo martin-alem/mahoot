@@ -7,31 +7,31 @@ function ProtectedRoute({ component: Component, ...rest }) {
   const userActionContext = React.useContext(UserActionContext);
   React.useEffect(() => {
     const access_token = getFromLocalStorage("access_token");
-    const url = `https://mahoot-main-server-3ddtc.ondigitalocean.app/?access_token=${access_token}`;
+    const url = `http://localhost:4000?access_token=${access_token}`;
     const method = "GET";
     const data = {};
     httpAgent(url, method, data)
-      .then((response) => {
+      .then(response => {
         if (response.ok) {
           response
             .json()
-            .then((data) => {
+            .then(data => {
               userActionContext.setUserState(data.message);
             })
-            .catch((error) => console.error(error));
+            .catch(error => console.error(error));
         } else {
           setToLocalStorage({ key: "loggedIn", value: false });
           window.location.replace("/");
         }
       })
-      .catch((error) => {
+      .catch(error => {
         console.error(error);
       });
   }, [rest.path]);
   return (
     <Route
       {...rest}
-      render={(props) => {
+      render={props => {
         if (getFromLocalStorage("loggedIn")) {
           return <Component {...props} />;
         } else {

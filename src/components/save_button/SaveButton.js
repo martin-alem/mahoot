@@ -33,10 +33,10 @@ function SaveButton() {
     }
   };
 
-  const submitQuiz = async (quiz) => {
+  const submitQuiz = async quiz => {
     try {
       const access_token = getFromLocalStorage("access_token");
-      const url = `https://mahoot-main-server-3ddtc.ondigitalocean.app/api/v1/quiz/?access_token=${access_token}`;
+      const url = `http://localhost:4000/api/v1/quiz/?access_token=${access_token}`;
       const method = "POST";
       const response = await httpAgent(url, method, quiz);
       if (response.ok) {
@@ -52,10 +52,10 @@ function SaveButton() {
     }
   };
 
-  const editQuiz = async (quiz) => {
+  const editQuiz = async quiz => {
     try {
       const access_token = getFromLocalStorage("access_token");
-      const url = `https://mahoot-main-server-3ddtc.ondigitalocean.app/api/v1/quiz/?access_token=${access_token}`;
+      const url = `http://localhost:4000/api/v1/quiz/?access_token=${access_token}`;
       const method = "PUT";
       const response = await httpAgent(url, method, quiz);
       if (response.ok) {
@@ -71,7 +71,7 @@ function SaveButton() {
     }
   };
 
-  const questionTest = (question) => {
+  const questionTest = question => {
     if (question.questionType === "quiz" && question.answers.length === 4 && question.title !== "") {
       return true;
     } else if (question.questionType === "boolean" && question.answers.length === 2 && question.title !== "") {
